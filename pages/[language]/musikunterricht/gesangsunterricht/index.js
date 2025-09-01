@@ -12,8 +12,10 @@ const getTeachers = algoliaClient.initIndex(process.env.ALGOLIA_TEACHERINDEX);
 const likes = searchClient.initIndex(process.env.ALGOLIA_RECOMMENDATION_INDEX);
 export async function getStaticPaths() {
     return {
-        paths: [],
-        fallback: 'blocking',
+        paths: [
+            { params: { language: 'ch-de' } }
+        ],
+        fallback: false,
     };
 }
 export async function getStaticProps({ params }) {

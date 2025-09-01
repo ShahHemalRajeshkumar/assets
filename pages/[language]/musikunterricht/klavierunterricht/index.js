@@ -15,6 +15,16 @@ import {
 
 const likes = searchClient.initIndex(process.env.ALGOLIA_RECOMMENDATION_INDEX);
 const getTeachers = algoliaClient.initIndex(process.env.ALGOLIA_TEACHERINDEX_INSTRUMENT);
+
+export async function getStaticPaths() {
+  return {
+    paths: [
+      { params: { language: 'ch-de' } }
+    ],
+    fallback: false,
+  };
+}
+
 export async function getStaticProps() {
   const language = 'ch-de';
   const instruments = await fetchInstrumentsData(instrumentsIndex);

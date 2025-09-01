@@ -18,6 +18,15 @@ import StructuredData from '@/components/StructuredData';
 const getTeachers = algoliaClient.initIndex(process.env.ALGOLIA_TEACHERINDEX);
 const likes = searchClient.initIndex(process.env.ALGOLIA_RECOMMENDATION_INDEX);
 
+export async function getStaticPaths() {
+  return {
+    paths: [
+      { params: { language: 'ch-de' } }
+    ],
+    fallback: false,
+  };
+}
+
 export async function getStaticProps() {
   const language = 'ch-de';
   const instruments = await fetchInstrumentsData(instrumentsIndex);
