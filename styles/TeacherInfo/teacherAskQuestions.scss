@@ -1,0 +1,245 @@
+.teacher-page-ask-popup {
+  width: 100%;
+  max-width: 750px !important; // For chat
+  // max-width: 680px !important; // For typeform
+  // max-width: 500px !important; // For next.js contact form
+  .teacher-ask-form {
+    &_top-border {
+      border-top: 1px solid #e4e7ec;
+    }
+    &-content {
+      @apply p-[20px];
+    }
+  }
+  .teacher-ask-success {
+    padding: 0px 20px 12px;
+    &-offer {
+      border-top: 1px solid #e4e7ec;
+    }
+    &-content {
+      padding: 16px;
+      border-radius: 12px;
+      border: 1px solid #d0d5dd;
+    }
+    &-columns {
+      width: 100%;
+      display: grid;
+      grid-gap: 24px;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    &-number {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      font-size: 19px;
+      color: #21697c;
+      font-weight: 700;
+      align-items: center;
+      border-radius: 100%;
+      justify-content: center;
+      background-color: #edf3f5;
+    }
+  }
+  .btn-primary {
+    height: 40px;
+    width: auto;
+    font-size: 14px;
+    padding: 8px 24px;
+  }
+}
+
+.ask-input-textarea-wrapper {
+  border-radius: 4px;
+  border: 1px solid #d0d5dd;
+}
+
+.teacher-page-ask-popup-hidden {
+  visibility: hidden;
+  background: transparent;
+}
+
+.teacher-page-ask-popup-trans {
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+.ask-input-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  border-radius: 4px;
+  border: 1px solid #d0d5dd;
+  &.ask-input-wrapper-textarea {
+    border: none;
+  }
+  &-error {
+    border: 1px solid #e11900;
+  }
+  .PhoneInputCountryIcon {
+    box-shadow: none !important;
+  }
+  .PhoneInputCountrySelectArrow {
+    border-color: rgba(0, 0, 0, 0.68) !important;
+  }
+  .ask-input {
+    width: 100%;
+    border: none;
+    font-size: 15px;
+    height: 48px;
+    padding: 15px 16px;
+    &-focus {
+      padding: 24px 16px 8px;
+    }
+    &-label-wrap {
+      top: 12px;
+      left: 16px;
+      display: flex;
+      position: absolute;
+      &-focus {
+        top: 2px;
+      }
+    }
+    &-textarea {
+      height: auto;
+      min-height: 72px;
+      max-height: 200px;
+      margin-right: 4px;
+      padding: 1px 16px 0px;
+      width: calc(100% - 4px);
+      &-form {
+        min-height: 150px;
+        max-height: 350px;
+      }
+    }
+    &-label {
+      font-size: 15px;
+      font-weight: 500;
+      color: rgba(0, 0, 0, 0.68);
+      &-area {
+        @apply text-[#000] font-[400];
+      }
+    }
+    &-required {
+      font-size: 15px;
+      font-weight: 500;
+      color: #ab1300;
+      margin-right: 2px;
+    }
+  }
+}
+
+.ask-checkbox {
+  @apply flex items-center justify-center;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid #21697c;
+  &-active {
+    background: #21697c;
+  }
+}
+
+.ask-delete-popup {
+  top: 0 !important;
+}
+
+.teacher-page-popup-screen.teacher-page-popup-screen-new {
+  top: 0px;
+  position: fixed;
+  height: var(--height-svh);
+  max-height: var(--height-svh);
+}
+
+#contact-teacher-modal {
+  @extend .scrollbar-invisible !optional;
+  overflow-Y: auto;
+  max-height: var(--height-svh);
+}
+
+.chat-options-button {
+  @apply btn-primary uppercase bg-primary cursor-pointer;
+  top: -80px;
+  left: 16px;
+  z-index: 999;
+  color: white;
+  position: absolute;
+  border-radius: 9999px;
+}
+
+@media (max-width: 800px) {
+  .teacher-page-popup-screen.teacher-page-popup-screen-new {
+    background-color: white;
+  }
+  #contact-teacher-modal {
+    box-shadow: none;
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: 0px !important;
+    height: var(--height-svh) !important;
+    .teacher-page-popup-head {
+      padding-top: 24px;
+    }
+    .teacher-ask-success {
+      &-columns {
+        grid-gap: 12px;
+        grid-template-columns: 1fr;
+      }
+    }
+    .teacher-page-ask-popup-content {
+      .teacher-ask-form {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        .teacher-ask-form-content {
+          flex-grow: 1;
+          min-height: calc(var(--height-svh) - 150px);
+        }
+        #message {
+          overflow-y: scroll;
+          height: calc(var(--height-svh) * 0.3);
+          &::-webkit-scrollbar {
+            width: 8px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.teacher-page-popup-screen.ask-delete-popup {
+  height: var(--height-svh) !important;
+  .teacher-ask-popup-buttons {
+    @apply flex items-center justify-end;
+    .teacher-ask-popup-buttons-pairs {
+      margin-left: 20px;
+    }
+    @media (max-width: 800px) {
+      margin-top: 20px;
+    }
+    @media (max-width: 500px) {
+      flex-direction: column-reverse;
+      .teacher-ask-popup-buttons-pairs {
+        margin-left: 0px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+  @media (max-width: 800px) {
+    .teacher-page-popup.teacher-page-ask-popup {
+      height: 100%;
+      border-radius: 0px;
+      max-width: 100vw !important;
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .teacher-page-ask-popup {
+    .teacher-ask-success {
+      &-columns {
+        grid-gap: 16px;
+      }
+    }
+  }
+}

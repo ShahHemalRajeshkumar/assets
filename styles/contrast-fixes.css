@@ -1,0 +1,66 @@
+/* Contrast fixes for accessibility compliance */
+
+/* Fix gray-400 text contrast - change to darker gray */
+.text-gray-400 {
+  color: #6b7280 !important; /* Original gray-400 */
+  color: #374151 !important; /* Darker gray-700 for better contrast */
+}
+
+/* Fix teacher content block background for better contrast */
+.teacher-content-block {
+  background-color: #f9fafb !important; /* Light gray background */
+  border: 1px solid #e5e7eb !important; /* Light border */
+}
+
+/* Fix badge content contrast */
+.BadgeTotalReviews__Content-sc-f6a929bc-0,
+.bXlyoP,
+.es-badge-total-reviews {
+  color: #111827 !important; /* Dark gray for better contrast */
+  background-color: #f3f4f6 !important; /* Light background */
+}
+
+/* Fix badge container contrast */
+.BadgeContainer__Inner-sc-99450702-0,
+.bLiMHw,
+.es-badge-container {
+  background-color: #ffffff !important; /* White background */
+  border: 1px solid #d1d5db !important; /* Light border */
+}
+
+/* Fix underlined text contrast */
+.underline.text-gray-400 {
+  color: #374151 !important; /* Dark gray instead of light gray */
+  text-decoration-color: #374151 !important;
+}
+
+/* Fix span text contrast */
+span.text-gray-400 {
+  color: #374151 !important; /* Dark gray for better readability */
+}
+
+/* Ensure minimum contrast ratio for all text elements */
+.text-\[15px\].font-Robot.leading-\[213\%\].underline.text-gray-400 {
+  color: #374151 !important;
+}
+
+/* Fix any remaining low contrast text */
+[class*="text-gray-400"] {
+  color: #374151 !important;
+}
+
+/* Improve contrast for review text */
+div[class*="BadgeTotalReviews"] {
+  color: #111827 !important;
+  font-weight: 500 !important;
+}
+
+/* Ensure proper contrast for all interactive elements */
+button, a, [role="button"] {
+  color: inherit;
+}
+
+button:focus, a:focus, [role="button"]:focus {
+  outline: 2px solid #2563eb !important;
+  outline-offset: 2px !important;
+}

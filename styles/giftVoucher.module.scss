@@ -1,0 +1,11 @@
+.react-tel-input {
+  input {
+    width: 100% !important;
+    padding: 23px 48px !important;
+    border-radius: 9px !important;
+  }
+  &.flag-dropdown,
+  &.selected-flag {
+    border-radius: 9px 0 0 9px !important;
+  }
+}

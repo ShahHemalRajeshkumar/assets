@@ -1,0 +1,665 @@
+@import "react-phone-number-input/style.css";
+@import "./contrast-fixes.css";
+@import "./button-accessibility.css";
+@import "./list-accessibility.css";
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: rgba(var(--color-black), 0.87);
+  @screen md {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
+
+#__next {
+  @apply bg-white;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.outline-visible {
+  @apply focus-visible:outline-primary outline-2 focus-visible:outline focus-visible:outline-offset-2;
+}
+
+.contain {
+  @apply px-4 sm:px-8 lg:px-16;
+
+  @screen lg {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.sub-contain {
+  @screen lg {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.header-contain {
+  @apply sm:px-12 lg:px-20;
+  @screen xxl {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+//footer
+.ms-footer:first-child {
+  @apply row-span-2;
+}
+
+@media screen and (min-width: 1278px) {
+  .ms-footer:nth-child(4) p {
+    margin-top: 2rem;
+  }
+}
+
+@media screen and (min-width: 1278px) {
+  .ms-footer:nth-child(4) p {
+    margin-top: 2rem;
+  }
+}
+
+.ms-page-scroll {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.MuiAutocomplete-inputRoot[class*="MuiOutlinedInput-root"] {
+  padding: 14px !important;
+}
+
+.btn-outline {
+  @apply py-3 px-11 rounded-full border-2 border-primary text-primary font-medium text-16px hover:bg-primary hover:text-white;
+}
+
+.btn-primary {
+  @apply flex items-center justify-center;
+  @apply py-3 px-11 rounded-full font-medium text-16px bg-primary text-white hover:bg-dark-primary border-2 border-primary;
+}
+
+.btn-white {
+  @apply bg-white px-11 py-3 rounded-full hover:bg-dark-primary text-primary hover:text-white;
+}
+
+.ms-break-line p:not(:first-child) {
+  display: none !important;
+}
+
+.ms-break-line ul {
+  display: none !important;
+}
+
+.ms-nav-overlay {
+  background-color: rgba(var(--color-black), 0.7);
+}
+
+span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: rgba(var(--color-primary)) !important;
+}
+
+.swiper-pagination-bullet {
+  width: 15px !important;
+  height: 15px !important;
+}
+
+.text-advance_rich-text-list__RrC6X p {
+  margin-bottom: unset !important;
+}
+
+.mapboxgl-compact {
+  display: none;
+}
+.mapboxgl-popup-content {
+  position: relative;
+  background: none !important;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 10%);
+  padding: 0 !important;
+  pointer-events: auto;
+  width: 208px;
+}
+.mapboxgl-popup-tip {
+  display: none !important;
+}
+.sb-list-item--bullet {
+  display: list-item;
+  list-style-type: disc;
+}
+
+:focus-visible {
+  outline: none;
+}
+
+.marketing-bg {
+  /* test globals */
+  background-color: #f5f9fd;
+}
+
+@font-face {
+  font-weight: 300;
+  font-style: normal;
+  font-family: "Roboto";
+  src: url("../assets/fonts/Roboto/Roboto-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-weight: 400;
+  font-style: normal;
+  font-family: "Roboto";
+  src: url("../assets/fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-weight: 500;
+  font-style: normal;
+  font-family: "Roboto";
+  src: url("../assets/fonts/Roboto/Roboto-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Roboto";
+  src: url("../assets/fonts/Roboto/Roboto-Bold.ttf") format("truetype");
+}
+// MS instruments font
+@font-face {
+  font-family: "ms_instruments";
+  src: url("../assets/fonts/ms_instruments.eot?ib2p1o");
+  src:
+    url("../assets/fonts/ms_instruments.eot?ib2p1o#iefix") format("embedded-opentype"),
+    url("../assets/fonts/ms_instruments.ttf?ib2p1o") format("truetype"),
+    url("../assets/fonts/ms_instruments.woff?ib2p1o") format("woff"),
+    url("../assets/fonts/ms_instruments.svg?ib2p1o#ms_instruments") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.ms_instruments {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "ms_instruments" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Enable Ligatures ================ */
+  letter-spacing: 0;
+  -webkit-font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga=1";
+  -moz-font-feature-settings: "liga";
+  -ms-font-feature-settings: "liga" 1;
+  font-feature-settings: "liga";
+  -webkit-font-variant-ligatures: discretionary-ligatures;
+  font-variant-ligatures: discretionary-ligatures;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ms_instruments-accordion:before {
+  content: "\e800";
+}
+.ms_instruments-alphorn:before {
+  content: "\e801";
+}
+.ms_instruments-arranging:before {
+  content: "\e802";
+}
+.ms_instruments-bagpipes:before {
+  content: "\e803";
+}
+.ms_instruments-band:before {
+  content: "\e804";
+}
+.ms_instruments-bandoneon:before {
+  content: "\e805";
+}
+.ms_instruments-banjo:before {
+  content: "\e806";
+}
+.ms_instruments-basler_drum:before {
+  content: "\e807";
+}
+.ms_instruments-basset_horn:before {
+  content: "\e808";
+}
+.ms_instruments-bassoon:before {
+  content: "\e809";
+}
+.ms_instruments-beatboxing:before {
+  content: "\e80a";
+}
+.ms_instruments-body_percussion:before {
+  content: "\e80b";
+}
+.ms_instruments-bugle:before {
+  content: "\e80c";
+}
+.ms_instruments-cajon:before {
+  content: "\e80d";
+}
+.ms_instruments-chamber_music:before {
+  content: "\e80e";
+}
+.ms_instruments-chromonica:before {
+  content: "\e80f";
+}
+.ms_instruments-clarinet:before {
+  content: "\e810";
+}
+.ms_instruments-clavichord:before {
+  content: "\e811";
+}
+.ms_instruments-composition:before {
+  content: "\e812";
+}
+.ms_instruments-conga:before {
+  content: "\e813";
+}
+.ms_instruments-cor_anglais:before {
+  content: "\e814";
+}
+.ms_instruments-cornet:before {
+  content: "\e815";
+}
+.ms_instruments-cornett:before {
+  content: "\e816";
+}
+.ms_instruments-didgeridoo:before {
+  content: "\e817";
+}
+.ms_instruments-dj:before {
+  content: "\e818";
+}
+.ms_instruments-djembe:before {
+  content: "\e819";
+}
+.ms_instruments-double_bass:before {
+  content: "\e81a";
+}
+.ms_instruments-drum:before {
+  content: "\e81b";
+}
+.ms_instruments-drums:before {
+  content: "\e81c";
+}
+.ms_instruments-duduk:before {
+  content: "\e81d";
+}
+.ms_instruments-ear-training:before {
+  content: "\e81e";
+}
+.ms_instruments-early_music_education:before {
+  content: "\e81f";
+}
+.ms_instruments-electric_bass:before {
+  content: "\e820";
+}
+.ms_instruments-electric_guitar:before {
+  content: "\e821";
+}
+.ms_instruments-euphonium:before {
+  content: "\e822";
+}
+.ms_instruments-flugelhorn:before {
+  content: "\e823";
+}
+.ms_instruments-flute:before {
+  content: "\e824";
+}
+.ms_instruments-gamelan:before {
+  content: "\e825";
+}
+.ms_instruments-guitar:before {
+  content: "\e826";
+}
+.ms_instruments-handpan_hang:before {
+  content: "\e827";
+}
+.ms_instruments-harmonica:before {
+  content: "\e828";
+}
+.ms_instruments-harmonium:before {
+  content: "\e829";
+}
+.ms_instruments-harp:before {
+  content: "\e82a";
+}
+.ms_instruments-harpsichord:before {
+  content: "\e82b";
+}
+.ms_instruments-horn:before {
+  content: "\e82c";
+}
+.ms_instruments-french_horn:before {
+  content: "\e82c";
+}
+.ms_instruments-improvisation:before {
+  content: "\e82d";
+}
+.ms_instruments-instrumental_ensemble:before {
+  content: "\e82e";
+}
+.ms_instruments-irish_harp:before {
+  content: "\e82f";
+}
+.ms_instruments-keyboard:before {
+  content: "\e830";
+}
+.ms_instruments-lute:before {
+  content: "\e831";
+}
+.ms_instruments-lyre:before {
+  content: "\e832";
+}
+.ms_instruments-mandolin:before {
+  content: "\e833";
+}
+.ms_instruments-marimba:before {
+  content: "\e834";
+}
+.ms_instruments-mastering:before {
+  content: "\e835";
+}
+.ms_instruments-melodica:before {
+  content: "\e836";
+}
+.ms_instruments-mental_training:before {
+  content: "\e837";
+}
+.ms_instruments-mixing:before {
+  content: "\e838";
+}
+.ms_instruments-musette:before {
+  content: "\e839";
+}
+.ms_instruments-music_production:before {
+  content: "\e83a";
+}
+.ms_instruments-music_recording:before {
+  content: "\e83b";
+}
+.ms_instruments-music_theory:before {
+  content: "\e83c";
+}
+.ms_instruments-natural_horn:before {
+  content: "\e83d";
+}
+.ms_instruments-natural_trumpet:before {
+  content: "\e83e";
+}
+.ms_instruments-oboe:before {
+  content: "\e83f";
+}
+.ms_instruments-oboe_damore:before {
+  content: "\e840";
+}
+.ms_instruments-ocarina:before {
+  content: "\e841";
+}
+.ms_instruments-organ:before {
+  content: "\e842";
+}
+.ms_instruments-oud:before {
+  content: "\e843";
+}
+.ms_instruments-panpipe:before {
+  content: "\e844";
+}
+.ms_instruments-percussion:before {
+  content: "\e845";
+}
+.ms_instruments-piano:before {
+  content: "\e846";
+}
+.ms_instruments-piccolo:before {
+  content: "\e847";
+}
+.ms_instruments-rapping:before {
+  content: "\e848";
+}
+.ms_instruments-recorder:before {
+  content: "\e849";
+}
+.ms_instruments-saxophone:before {
+  content: "\e84a";
+}
+.ms_instruments-schwyzeroergeli:before {
+  content: "\e84b";
+}
+.ms_instruments-serpent:before {
+  content: "\e84c";
+}
+.ms_instruments-shawm:before {
+  content: "\e84d";
+}
+.ms_instruments-singing:before {
+  content: "\e84e";
+}
+.ms_instruments-sitar:before {
+  content: "\e84f";
+}
+.ms_instruments-songwriting:before {
+  content: "\e850";
+}
+.ms_instruments-stage_presence:before {
+  content: "\e851";
+}
+.ms_instruments-steelpan:before {
+  content: "\e852";
+}
+.ms_instruments-synthesizer:before {
+  content: "\e853";
+}
+.ms_instruments-tabla:before {
+  content: "\e854";
+}
+.ms_instruments-theorbo:before {
+  content: "\e855";
+}
+.ms_instruments-theremin:before {
+  content: "\e856";
+}
+.ms_instruments-transverse_flute:before {
+  content: "\e857";
+}
+.ms_instruments-trombone:before {
+  content: "\e858";
+}
+.ms_instruments-trumpet:before {
+  content: "\e859";
+}
+.ms_instruments-tuba:before {
+  content: "\e85a";
+}
+.ms_instruments-ukulele:before {
+  content: "\e85b";
+}
+.ms_instruments-viola:before {
+  content: "\e85c";
+}
+.ms_instruments-viola_da_gamba:before {
+  content: "\e85d";
+}
+.ms_instruments-viola_damore:before {
+  content: "\e85e";
+}
+.ms_instruments-violin:before {
+  content: "\e85f";
+}
+.ms_instruments-violoncello:before {
+  content: "\e860";
+}
+.ms_instruments-vocal:before {
+  content: "\e861";
+}
+.ms_instruments-vocal_ensemble:before {
+  content: "\e862";
+}
+.ms_instruments-xylophone:before {
+  content: "\e863";
+}
+.ms_instruments-yodeling:before {
+  content: "\e864";
+}
+.ms_instruments-zither:before {
+  content: "\e865";
+}
+.ms_instruments-balalaika:before {
+  content: "\e866";
+}
+.ms_instruments-vibraphone:before {
+  content: "\e86a";
+}
+.ms_instruments-music_history:before {
+  content: "\e869";
+}
+.ms_instruments-contrabassoon:before {
+  content: "\e867";
+}
+.ms_instruments-guitalele:before {
+  content: "\e868";
+}
+.ms_instruments-app_music:before {
+  content: "\e86b";
+}
+.ms_instruments-conductor:before {
+  content: "\e86c";
+}
+.ms_instruments-bluesharp:before {
+  content: "\e828";
+}
+.ms_instruments-lyre:before {
+  content: "\e832";
+}
+.ms_instruments-kemenche:before {
+  content: "\e86d";
+}
+.ms_instruments-hammer_dulcimer:before {
+  content: "\e86e";
+}
+.ms_instruments-lyre_cretan:before {
+  content: "\e828";
+}
+.ms_instruments-cimbalom:before {
+  content: "\e870";
+}
+.ms_instruments-empty:before {
+  content: "\e9ff";
+}
+.ms_instruments-unknown:before {
+  content: "\20";
+}
+.ms_instruments-music_physiology:before {
+  content: "\e871";
+}
+.ms_instruments-music_therapy:before {
+  content: "\e872";
+}
+.ms_instruments-eurhytmics:before {
+  content: "\e873";
+}
+.ms_instruments-guitar_accompaniment:before {
+  content: "\e874";
+}
+.ms_instruments-music_therapy:before {
+  content: "\e875";
+}
+.ms_instruments-musical_theatre:before {
+  content: "\e876";
+}
+.ms_instruments-native_american_flute:before {
+  content: "\e877";
+}
+.ms_instruments-piano_accompaniment:before {
+  content: "\e878";
+}
+.ms_instruments-singing_accompaniment:before {
+  content: "\e879";
+}
+
+.main-search-popup {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+.modal_search_form_content {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  padding: 16px 12px 19px;
+  height: calc(100vh - 60px);
+  .typeahead {
+    height: 40px;
+    border-radius: 4px;
+    padding-left: 36px;
+    border: 1px solid #d0d5dd;
+    color: rgba(0, 0, 0, 0.68);
+  }
+  .modal_search_form_submit {
+    @apply flex items-center justify-center hover:bg-dark-primary;
+    height: 40px;
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    // margin-left: 8px;
+    border-radius: 100px;
+    background: #21697c;
+    text-transform: uppercase;
+    width: calc(100vw - 24px); // 135px
+    svg {
+      margin-right: 9px;
+    }
+  }
+}
+
+.show-popup {
+  overflow: hidden !important;
+  overflow-y: hidden !important;
+  overflow-x: hidden !important;
+  touch-action: none !important;
+  overscroll-behavior: none !important;
+  .teacher-page-popup-screen {
+    overflow-x: hidden !important;
+  }
+  &-window {
+    @media (min-width: 768px) {
+      padding-right: var(--scrollbar-width);
+    }
+  }
+}
+
+.window-scrollbar {
+  *::-webkit-scrollbar {
+    width: var(--scrollbar-width);
+    height: var(--scrollbar-width);
+  }
+}
+
+.disabled-chevron-arrow {
+  @apply opacity-50 hover:animate-none;
+  cursor: default !important;
+}

@@ -1,0 +1,29 @@
+/* List accessibility fixes */
+
+/* Fix improper list structures by converting divs in ul to li */
+ul > div {
+  display: list-item !important;
+  list-style: none !important;
+}
+
+/* Ensure proper list semantics */
+ul[role="list"] {
+  list-style: none;
+}
+
+ul[role="list"] > div {
+  display: list-item;
+  list-style: none;
+}
+
+/* Grid lists should use proper list structure */
+ul.grid > div {
+  display: list-item !important;
+  list-style: none !important;
+}
+
+/* Course lists */
+ul.flex.flex-col > div {
+  display: list-item !important;
+  list-style: none !important;
+}

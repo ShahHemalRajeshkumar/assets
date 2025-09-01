@@ -1,0 +1,19 @@
+.teacher-header {
+  width: 100%;
+  background: #ffffff;
+  .teacher-header-content {
+    @apply mx-auto flex items-center justify-between;
+    height: 60px;
+    padding: 0 10px;
+    max-width: 1440px;
+  }
+  .teacher-header-buttons {
+    @apply flex items-center justify-between;
+    width: 420px;
+    .btn-outline {
+      height: 40px;
+      font-size: 15px;
+      padding: 7px 16px 0;
+    }
+  }
+}

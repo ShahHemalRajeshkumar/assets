@@ -1,0 +1,304 @@
+.configurator {
+  width: 100%;
+  padding: 16px;
+  max-width: 380px;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow:
+    0px 4px 8px -2px rgba(16, 24, 40, 0.1),
+    0px 2px 4px -2px rgba(16, 24, 40, 0.06);
+  &-duration {
+    @apply flex items-center justify-center text-14px text-primary font-medium;
+    height: 32px;
+    cursor: pointer;
+    border-radius: 8px;
+    background: #ffffff;
+    border: 1px solid #2e788d;
+    &:hover,
+    &-active {
+      background: #edf3f5;
+      color: rgba(0, 0, 0, 0.87);
+      border: 1px solid #2e788d;
+    }
+    &-disabled {
+      cursor: default !important;
+      color: #21697c !important;
+      background: #ffffff !important;
+      border: 1px solid #2e788d !important;
+    }
+  }
+  &-lesson {
+    @apply flex justify-between items-center cursor-pointer;
+    min-height: 40px;
+    transition: 0.3s;
+    padding: 5px 12px;
+    background: #ffffff;
+    &-amount {
+      @apply text-18px text-primary font-bold;
+    }
+    &-text {
+      @apply text-[15px] leading-[28px] ml-[6px] text-gray-400;
+      font-weight: 500;
+      &-active {
+        color: rgba(0, 0, 0, 0.68);
+      }
+    }
+    &-price-wrap {
+      @apply grid grid-cols-1 items-center;
+    }
+    &-price {
+      @apply text-16px text-primary font-bold;
+    }
+    &-discount {
+      @apply flex items-center justify-center text-12px font-bold;
+      width: 40px;
+      height: 20px;
+      border-radius: 50px;
+      background: #ffc24b;
+    }
+    &-5 {
+      border-radius: 8px 8px 0 0;
+      border: 1px solid #d0d5dd !important;
+      border-bottom-width: 0.5px !important;
+      &:hover,
+      &.configurator-lesson-active {
+        border-color: #2e788d !important;
+      }
+    }
+    &-10 {
+      border: 1px solid #d0d5dd !important;
+      border-top-width: 0.5px !important;
+      border-bottom-width: 0.5px !important;
+      &:hover,
+      &.configurator-lesson-active {
+        border-color: #2e788d !important;
+      }
+    }
+    &-20 {
+      border-radius: 0 0 8px 8px;
+      border: 1px solid #d0d5dd !important;
+      border-top-width: 0.5px !important;
+      &:hover,
+      &.configurator-lesson-active {
+        border-color: #2e788d !important;
+      }
+    }
+    &:hover,
+    &-active {
+      background: #edf3f5;
+      .configurator-lesson-amount,
+      .configurator-lesson-price {
+        color: #004252;
+      }
+      .configurator-lesson-text {
+        color: #004252;
+      }
+    }
+  }
+  &-border {
+    border-radius: 8px;
+    background: #ffffff;
+    border: 1px solid #a1a9b6;
+    &-left {
+      border-left: 1px solid #a1a9b6;
+    }
+    &-bottom {
+      border-bottom: 1px solid #a1a9b6;
+    }
+  }
+  &-book-btn {
+    @apply uppercase mt-3 w-full bg-primary text-white;
+    height: 48px;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 100px;
+    &-disabled {
+      @apply btn-primary uppercase mt-3 w-full font-medium;
+      height: 48px;
+      font-size: 15px;
+      color: #a1a9b6;
+      border-radius: 100px;
+      background: #f2f4f7;
+    }
+  }
+}
+
+.configurator-select {
+  @apply relative cursor-pointer;
+  height: 55px;
+  padding: 11px 12px;
+  &-disabled {
+    user-select: none;
+    cursor: default !important;
+  }
+  &-options {
+    top: 56px;
+    left: -1px;
+    padding: 6px;
+    z-index: 999;
+    position: absolute;
+    width: calc(100% + 2px);
+    border-radius: 0 0 8px 8px;
+    background-color: #ffffff;
+    box-shadow:
+      0px 4px 8px -2px rgba(16, 24, 40, 0.1),
+      0px 2px 4px -2px rgba(16, 24, 40, 0.06);
+  }
+  &-option,
+  &-value {
+    @apply font-medium;
+    font-size: 15px;
+    overflow: hidden;
+    padding-right: 20px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: rgba(0, 0, 0, 0.87);
+  }
+  &-value {
+    @apply relative;
+    top: 14px;
+  }
+  &-value-empty {
+    color: rgba(0, 0, 0, 0.68);
+  }
+  &-option {
+    padding: 4px 6px;
+    margin-bottom: 2px;
+    &-selected,
+    &:hover {
+      background: #f2f4f7;
+      border-radius: 8px;
+    }
+  }
+  &-label {
+    @apply text-12px font-medium mb-1 absolute;
+    top: 8px;
+    left: 12px;
+    color: rgba(0, 0, 0, 0.68);
+  }
+  &-label-error {
+    color: #e11900;
+  }
+  &-icon {
+    @apply absolute;
+    top: 23px;
+    right: 18px;
+  }
+  .rbt-input-main {
+    @apply relative;
+    top: 10px;
+    width: 100%;
+    padding-right: 24px;
+    background: transparent;
+    font-size: 14px !important;
+  }
+  .rbt-menu {
+    @apply relative rounded-lg;
+    z-index: 99;
+    max-width: 380px;
+    top: 4px !important;
+    background: #ffffff;
+    padding: 16px 8px 8px;
+    left: -13px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    width: calc(100% + 26px) !important;
+    box-shadow:
+      0px 4px 8px -2px rgba(16, 24, 40, 0.1),
+      0px 2px 4px -2px rgba(16, 24, 40, 0.06);
+    .dropdown-item {
+      font-size: 14px !important;
+      margin-bottom: 8px !important;
+      &:hover {
+        @apply font-bold;
+      }
+    }
+  }
+}
+
+.teacher-info-block {
+  @apply grid gap-4 rounded-lg items-center;
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 8px;
+  background: #ffffff;
+  grid-template-columns: 56px 1fr min-content;
+  box-shadow:
+    0px 4px 8px -2px rgba(16, 24, 40, 0.1),
+    0px 2px 4px -2px rgba(16, 24, 40, 0.06);
+  &-booked {
+    @apply bg-yellow-200;
+  }
+}
+
+.configurator-fixed {
+  top: -1px;
+  position: sticky;
+
+  &-tabs {
+    top: 20px;
+    z-index: 9999;
+  }
+
+  &-mobile {
+    @extend .visible-scrollbar;
+    min-width: 380px;
+    padding-right: 0px !important;
+
+    @media (max-width: 768px) {
+      min-width: 100%;
+      overflow-y: scroll;
+      margin: 20px auto 0px;
+      max-height: calc(90vh - 80px);
+    }
+  }
+
+  .configurator {
+    margin-bottom: 12px;
+  }
+}
+
+.configurator-checkbox-wrapper {
+  display: grid;
+  grid-gap: 12px;
+  cursor: pointer;
+  margin-bottom: 12px;
+  grid-template-columns: 20px 1fr;
+  .configurator-checkbox {
+    @apply flex items-center justify-center;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    border: 1px solid #21697c;
+    .configurator-checkbox-inner {
+      width: 8px;
+      height: 8px;
+      border-radius: 100%;
+      background: #ffffff;
+    }
+    .configurator-checkbox-active {
+      background: #21697c;
+    }
+  }
+}
+
+.configurator-step-2 {
+  &__back {
+    @apply flex items-center text-primary font-medium cursor-pointer mb-[18px] uppercase;
+    font-size: 15px;
+  }
+  &__title {
+    @apply text-[19px] leading-[19px] mb-1.5 font-bold;
+    @extend .tx-primary;
+    line-height: 18px;
+  }
+  &__subtitle {
+    @apply text-[13px] leading-[13px] mb-[20px];
+    @extend .tx-secondary;
+    color: rgba(0, 0, 0, 0.68);
+  }
+  &__border {
+    width: 100%;
+    border-bottom: 1px solid #e4e7ec;
+  }
+}

@@ -1,0 +1,66 @@
+.teacher-label-row {
+  @apply items-center text-14px;
+  height: 32px;
+  margin-bottom: 20px;
+  display: inline-flex;
+  @media (max-width: 1024px) {
+    justify-content: space-between;
+  }
+  &-info {
+    @media (max-width: 550px) {
+      @apply text-12px w-full;
+    }
+  }
+
+  &__one {
+    padding: 4px 0;
+    margin-bottom: 8px;
+    border-radius: 100px;
+    background: #f2f4f7;
+  }
+  .teacher-label-item {
+    @apply items-center;
+    height: 31px;
+    padding: 0 8px;
+    padding-right: 0px;
+    display: inline-flex;
+    border-radius: 100px;
+    background: #ffffff;
+    &__one {
+      background: transparent;
+      .teacher-label-item-icon {
+        display: block !important;
+      }
+    }
+    &__border {
+      height: 20px;
+      border-left: 1px solid #a1a9b6;
+    }
+    &-width {
+      min-width: 155px;
+    }
+    .teacher-label-item-icon {
+      @media (max-width: 400px) {
+        display: none;
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+.teacher-label-row-media {
+  @apply flex flex-col items-start;
+  height: auto;
+  background: transparent;
+  .teacher-label-item__one {
+    min-height: 28px;
+    background: #f2f4f7;
+    &:nth-of-type(1) {
+      padding-right: 8px;
+      margin-bottom: 8px;
+    }
+  }
+  .teacher-label-item__border {
+    display: none;
+  }
+}

@@ -1,0 +1,114 @@
+[
+    {
+        "instrument_key": "singing",
+        "text_block_template": "singing"
+    },
+    {
+        "instrument_key": "early_music_education",
+        "text_block_template": "early_music_education"
+    },
+    {
+        "instrument_key": "vocal",
+        "text_block_template": "vocal"
+    },
+    {
+        "instrument_key": "vocal_ensemble",
+        "text_block_template": "vocal_ensemble"
+    },
+    {
+        "instrument_key": "band",
+        "text_block_template": "band"
+    },
+    {
+        "instrument_key": "beatboxing",
+        "text_block_template": "beatboxing"
+    },
+    {
+        "instrument_key": "dj",
+        "text_block_template": "dj"
+    },
+    {
+        "instrument_key": "arranging",
+        "text_block_template": "agnostic"
+    },
+    {
+        "instrument_key": "conductor",
+        "text_block_template": "agnostic"
+    },
+    {
+        "instrument_key": "composition",
+        "text_block_template": "agnostic"
+    },
+    {
+        "instrument_key": "ear-training",
+        "text_block_template": "agnostic"
+    },
+    {
+        "instrument_key": "improvisation",
+        "text_block_template": "agnostic"
+    },
+    {
+        "instrument_key": "music_production",
+        "text_block_template": "agnostic"
+    },
+    {
+        "instrument_key": "percussion",
+        "text_block_template": "agnostic"
+    },
+    {
+        "instrument_key": "app_music",
+        "text_block_template": "agnostic"
+    },
+    {
+        "instrument_key": "body_percussion",
+        "text_block_template": "agnostic"
+    },
+    {
+        "instrument_key": "chamber_music",
+        "text_block_template": "agnostic"
+    },
+    {
+        "instrument_key": "instrumental_ensemble",
+        "text_block_template": "agnostic"
+    },
+    {
+        "instrument_key": "mastering",
+        "text_block_template": "agnostic"
+    },
+    {
+        "instrument_key": "mental_training",
+        "text_block_template": "agnostic"
+    },
+    {
+        "instrument_key": "mixing",
+        "text_block_template": "agnostic"
+    },
+    {
+        "instrument_key": "music_history",
+        "text_block_template": "agnostic"
+    },
+    {
+        "instrument_key": "music_physiology",
+        "text_block_template": "agnostic"
+    },
+    {
+        "instrument_key": "music_recording",
+        "text_block_template": "agnostic"
+    },
+    {
+        "instrument_key": "music_theory",
+        "text_block_template": "agnostic"
+    },
+    {
+        "instrument_key": "songwriting",
+        "text_block_template": "agnostic"
+    },
+    {
+        "instrument_key": "stage_presence",
+        "text_block_template": "agnostic"
+    },
+    {
+        "instrument_key": "rapping",
+        "text_block_template": "agnostic"
+    }
+]

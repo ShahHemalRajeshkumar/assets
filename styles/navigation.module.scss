@@ -1,0 +1,21 @@
+.ms-nav {
+  &-active {
+    @apply shadow-lg bg-white;
+  }
+  &-active-on-search {
+    @apply shadow-none;
+    background-color: var(--color-primary);
+  }
+  &-overlay {
+    background-color: rgba(var(--color-black), 0.7);
+  }
+  &-position {
+    @media (min-width: 1280px) {
+      position: unset;
+      top: unset;
+    }
+  }
+}
+.hamburger-menu {
+  fill: rgb(var(--color-primary));
+}

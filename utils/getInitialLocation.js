@@ -1,0 +1,25 @@
+export const getInitialLocation = (language) => ({
+  id: 'country.8748',
+  relevance: 1,
+  type: 'Feature',
+  properties: {
+    wikidata: 'Q39',
+    short_code: 'ch',
+  },
+  language_en: 'en',
+  language_de: 'de',
+  text_de: 'Schweiz',
+  text_en: 'Switzerland',
+  place_type: ['country'],
+  place_name_de: 'Schweiz',
+  place_name_en: 'Switzerland',
+  language: language === 'ch-de' ? 'de' : 'en',
+  text: language === 'ch-de' ? 'Schweiz' : 'Switzerland',
+  place_name: language == 'ch-de' ? 'Schweiz' : 'Switzerland',
+  bbox: [5.955907, 45.817986, 10.492061, 47.808454],
+  center: [8.23439191387853, 46.8024955829499],
+  geometry: {
+    coordinates: [8.23439191387853, 46.8024955829499],
+    type: 'Point',
+  },
+});

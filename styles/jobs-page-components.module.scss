@@ -1,0 +1,129 @@
+.default-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+}
+
+.arrow-icon svg g path {
+  fill-opacity: 1;
+}
+
+.input-field-wrapper {
+  border: 1px solid gray;
+  border-radius: 0.5rem;
+}
+
+.job-list {
+  @extend .default-grid;
+}
+
+.search-jobs-form {
+  @extend .default-grid;
+}
+
+.search-jobs-form svg {
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+
+.card {
+  position: relative;
+
+  &::after {
+    display: block;
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    box-shadow: 0 9px 15px 0 #21697c;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border-radius: 8px;
+    opacity: 0;
+  }
+
+  &:hover::after {
+    opacity: 0.4;
+    transition: all 0.5s;
+  }
+}
+
+.image-wrapper {
+  background-color: #4e8ca0;
+  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+  height: 264px;
+}
+
+.content-wrapper {
+  font-family: "Roboto", sans-serif;
+  color: #333;
+  padding: 25px 37px;
+}
+
+.header {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.search-job-field .dropdown-menu {
+  display: flex !important;
+  flex-direction: column;
+  border: 1px solid gray;
+  background: white;
+  width: 100% !important;
+  z-index: 10;
+  border-radius: 0 0rem 0.5rem 0.5rem;
+}
+
+.search-job-field .form-control {
+  width: 100%;
+  padding: 0.75rem 0.5rem 0.75rem 2.5rem;
+  border-radius: 0.5rem;
+}
+
+.header-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #21697c;
+}
+
+.header-content {
+  margin-top: 30px;
+
+  @media screen and (min-width: 960px) {
+    margin-top: 0;
+  }
+}
+
+.header-section {
+  background: #21697c;
+  height: 300px;
+
+  @media screen and (min-width: 1536px) {
+    height: 400px;
+  }
+}
+
+.filter-icon {
+  svg {
+    position: relative;
+    height: 2rem;
+    margin-right: 1rem;
+  }
+  path {
+    fill: #000;
+    fill-opacity: 0.5;
+  }
+
+  @media screen and (min-width: 600px) {
+    display: none;
+  }
+  @media screen and (min-width: 1060px) {
+    display: flex;
+  }
+}

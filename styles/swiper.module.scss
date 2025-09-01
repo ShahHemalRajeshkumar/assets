@@ -1,0 +1,61 @@
+.ms-swiper {
+  &-wrapper {
+    height: auto !important;
+    width: auto !important;
+  }
+  &-button-prev,
+  &-button-next {
+    width: auto !important;
+    height: auto !important;
+    border-radius: 50% !important;
+    padding: 10px 12px !important;
+    @screen sm {
+      top: 50% !important;
+    }
+    &::after {
+      color: rgba(var(--color-primary)) !important;
+      font-size: 18px !important;
+      border-radius: 50% !important;
+      padding: 9px 15px !important;
+      background-color: rgba(var(--color-white)) !important;
+    }
+  }
+  &-button-prev {
+    @screen sm {
+      left: -55px !important;
+    }
+  }
+  &-prev {
+    display: none;
+    @screen md {
+      display: block;
+    }
+  }
+  &-button-next {
+    @screen sm {
+      right: -55px !important;
+    }
+  }
+  &-next {
+    display: none;
+    @screen md {
+      display: block;
+    }
+  }
+}
+
+.ms-button-prev1:after,
+.ms-button-next1:after {
+  color: rgba(var(--color-primary)) !important;
+  font-size: 18px !important;
+  border-radius: 50% !important;
+  padding: 9px 15px !important;
+  background-color: rgba(var(--color-white)) !important;
+  display: none;
+}
+@screen md {
+  .ms-button-prev1:after,
+  .ms-button-next1:after {
+    display: block;
+  }
+}

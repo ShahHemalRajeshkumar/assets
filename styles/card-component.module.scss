@@ -1,0 +1,97 @@
+.card_wrapper {
+  &.active {
+    box-shadow: 0px 0px 2px red;
+  }
+  .card_media {
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 132px;
+  }
+  .card_popup_media {
+    background: url(http://a.storyblok.com/f/121094/400x160/a08f0f3604/sebastian_course_3_11zon.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 94px;
+  }
+  .svg_wrapper {
+    svg {
+      height: 24px !important;
+      width: 24px !important;
+      position: static !important;
+      top: 0 !important;
+      padding-left: 0 !important;
+    }
+  }
+}
+
+.teacher_card {
+  padding: 12px;
+  display: grid;
+  grid-gap: 16px;
+  cursor: pointer;
+  min-height: 100%;
+  border-radius: 12px;
+  border: 1px solid #d0d5dd;
+  grid-template-columns: 96px 1fr;
+  background: linear-gradient(180deg, #edf3f5 90px, #ffffff calc(100% - 90px));
+  .card_instruments_wrapper {
+    display: flex;
+    font-size: 28px;
+    @media (max-width: 600px) {
+      font-size: 24px;
+    }
+  }
+  .card_instruments {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media (max-width: 600px) {
+      margin-bottom: 0px !important;
+    }
+  }
+  .cart_certified_info {
+    display: flex;
+    font-size: 14px;
+    align-items: center;
+    margin-bottom: 1.25rem;
+    @media (max-width: 1024px) {
+      justify-content: space-between;
+    }
+  }
+  .cart_certified {
+    height: 31px;
+    padding: 0 8px;
+    padding-right: 12px;
+    align-items: center;
+    display: inline-flex;
+    border-radius: 100px;
+    background: #ffffff;
+    .cart_certified_likes {
+      margin-left: 4px;
+      @media (max-width: 1024px) {
+        display: none;
+        margin-left: 0;
+      }
+    }
+  }
+  @media (max-width: 1200px) {
+    margin: 0 auto;
+    // max-width: 650px;
+  }
+  .teacher_card_image {
+    @media (max-width: 600px) {
+      display: none;
+    }
+  }
+  .teacher_card_image_small {
+    display: none;
+    @media (max-width: 600px) {
+      display: block;
+    }
+  }
+  @media (max-width: 600px) {
+    grid-gap: 0px;
+    grid-template-columns: 1fr;
+    background: linear-gradient(180deg, #edf3f5 120px, #ffffff calc(100% - 120px));
+  }
+}

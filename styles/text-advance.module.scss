@@ -1,0 +1,21 @@
+.rich-text-list {
+  ul {
+    margin: 1em 0;
+    padding-left: 40px;
+    list-style-type: disc;
+  }
+  ol {
+    margin: 1em 0;
+    padding-left: 40px;
+    list-style-type: decimal;
+  }
+  li {
+    display: list-item;
+  }
+  blockquote {
+    margin: 1em 40px;
+  }
+  p {
+    margin-bottom: 12px;
+  }
+}

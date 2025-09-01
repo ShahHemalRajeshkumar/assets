@@ -1,0 +1,28 @@
+.search-online {
+    * {
+        outline: none !important;
+    }
+    &-tooltip {
+        @apply relative;
+        &:hover .search-online-tooltip-text {
+            display: flex;
+        }
+        &-text {
+            top: 20px;
+            right: 0px;
+            z-index: 9;
+            padding: 8px;
+            display: none;
+            color: white;
+            font-size: 12px;
+            min-width: 160px;
+            max-width: 220px;
+            overflow: hidden;
+            position: absolute;
+            border-radius: 4px;
+            white-space: pre-line;
+            text-overflow: ellipsis;
+            background: rgba(97, 97, 97, 0.9);
+        }
+    }
+}

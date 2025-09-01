@@ -1,0 +1,815 @@
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[build]
+  command   = "npm run build"
+  functions = "functions"
+  publish = ".next"
+
+[functions]
+# Specifies `esbuild` for functions bundling
+node_bundler = "esbuild"
+
+included_files = ["public/locales/*, server.js"]
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Security-Policy = "frame-ancestors 'self' https://www.evta.ch https://app.storyblok.com https://storyblok.com https://sessions.bugsnag.com https://otlp.bugsnag.com https://www.googletagmanager.com;"
+
+[[redirects]]
+  from = "/ch-de/blog/*"
+  to = "https://www.blog.matchspace-music.ch/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/ch-en/blog/*"
+  to = "https://www.blog.matchspace-music.ch/en/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+from = "/"
+to = "/ch-de"
+status = 301
+force = true
+
+[[redirects]]
+from = "/test"
+to = "https://test.matchspace.com"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/test"
+to = "https://test.matchspace.com/de/"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-en/test"
+to = "https://test.matchspace.com"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/blog-de/musiklehrpersonen/flexible-unterrichtsraeume-fuer-musiklehrpersonen-in-zuerich-nord-willkommen-in-der-notenloft"
+to = "https://www.blog.matchspace-music.ch/post/flexible-unterrichtsr%C3%A4ume-f%C3%BCr-musiklehrpersonen-in-z%C3%BCrich-nord-willkommen-in-der-notenloft"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/blog-de/musikschueler-innen/gitarre-spielen-lernen-fuer-anfaenger-das-musst-du-wissen"
+to = "https://www.blog.matchspace-music.ch/post/gitarre-spielen-lernen-f%C3%BCr-anf%C3%A4nger-das-musst-du-wissen"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/blog-de/musikschueler-innen/ich-kann-nicht-singen-fakt-oder-mythos"
+to = "https://www.blog.matchspace-music.ch/post/ich-kann-nicht-singen-singen-lernen-f%C3%BCr-anf%C3%A4nger-innen"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/blog-de/musikschueler-innen/geigenspielen-lernen-fuer-anfaenger-das-musst-du-wissen"
+to = "https://www.blog.matchspace-music.ch/post/geigenspielen-lernen-f%C3%BCr-anf%C3%A4nger-das-musst-du-wissen"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/blog-de/musikschueler-innen/klavierspielen-lernen-fuer-anfaenger-innen-das-musst-du-wissen"
+to = "https://www.blog.matchspace-music.ch/post/klavierspielen-lernen-f%C3%BCr-anf%C3%A4nger-innen-das-musst-du-wissen"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/blog-de/musikschueler-innen/cellounterricht-fuer-anfaenger-innen-das-musst-du-wissen"
+to = "https://www.blog.matchspace-music.ch/post/cellounterricht-f%C3%BCr-anf%C3%A4nger-innen-das-musst-du-wissen"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-en/blog-en/music-teachers/flexible-teaching-location-for-music-teachers-in-zurich-welcome-to-notenloft"
+to = "https://www.blog.matchspace-music.ch/en/post/flexible-teaching-location-for-music-teachers-in-zurich-welcome-to-notenloft"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-en/blog-en/music-students/learning-to-play-the-violin-for-beginners"
+to = "https://www.blog.matchspace-music.ch/en/post/learning-to-play-the-violin-for-beginners-here-s-what-you-need-to-know"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-en/blog-en/music-students/i-can-t-sing-fact-or-myth"
+to = "https://www.blog.matchspace-music.ch/en/post/i-can-t-sing-learning-to-sing-for-beginners"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-en/blog-en/music-students/learning-to-play-the-piano-for-beginners-here-s-what-you-need-to-know"
+to = "https://www.blog.matchspace-music.ch/en/post/learning-to-play-the-piano-for-beginners-here-s-what-you-need-to-know"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-en/blog-en/music-students/learn-to-play-the-guitar-for-beginners-that-s-what-you-need-to-know"
+to = "https://www.blog.matchspace-music.ch/en/post/learn-to-play-the-guitar-for-beginners-that-s-what-you-need-to-know"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-en/blog-en/music-students/all-things-cello-learning-to-play-as-a-beginner"
+to = "https://www.blog.matchspace-music.ch/en/post/all-things-cello-learning-to-play-as-a-beginner"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/blog"
+to = "https://www.blog.matchspace-music.ch/"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/ueber/in-den-nachrichten"
+to = "https://www.blog.matchspace-music.ch/blog/categories/in-den-nachrichten"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/ueber/neuigkeiten"
+to = "https://www.blog.matchspace-music.ch/blog/categories/neuigkeiten"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-en/blog"
+to = "https://www.blog.matchspace-music.ch/en"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-en/about/in-the-news"
+to = "https://www.blog.matchspace-music.ch/en/blog/categories/in-the-news"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-en/about/news"
+to = "https://www.blog.matchspace-music.ch/en/blog/categories/news"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/neuigkeiten/in-den-nachrichten/artikel-in-der-online-zeitschrift-mamalicous"
+to = "https://www.blog.matchspace-music.ch/post/artikel-in-der-online-zeitschrift-mamalicous"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/neuigkeiten/in-den-nachrichten/erste-folge-des-sunjam-zugabe-podcast"
+to = "https://www.blog.matchspace-music.ch/post/neuigkeiten/in-den-nachrichten/erste-folge-des-sunjam-zugabe-podcast"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/neuigkeiten/in-den-nachrichten/matchspace-music-im-tadah-magazin"
+to = "https://www.blog.matchspace-music.ch/post/euigkeiten/in-den-nachrichten/matchspace-music-im-tadah-magazin"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/neuigkeiten/in-den-nachrichten/matchspace-music-in-der-juni-ausgabe-von-hr-today"
+to = "https://www.blog.matchspace-music.ch/post/matchspace-music-in-der-juni-ausgabe-von-hr-today"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/neuigkeiten/in-den-nachrichten/matchspace-music-in-der-schweizer-musikzeitung"
+to = "https://www.blog.matchspace-music.ch/post/matchspace-music-in-der-schweizer-musikzeitung"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/neuigkeiten/in-den-nachrichten/swiss-startup-days-finalist-2021"
+to = "https://www.blog.matchspace-music.ch/post/swiss-startup-days-finalist-2021"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/neuigkeiten/nachrichtendetails/150-musiklehrpersonen-ein-kleiner-meilenstein"
+to = "https://www.blog.matchspace-music.ch/post/150-musiklehrpersonen-ein-kleiner-meilenstein"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/neuigkeiten/nachrichtendetails/mitarbeiter-engagement-durch-musik"
+to = "https://www.blog.matchspace-music.ch/post/mitarbeiter-engagement-durch-musik-musikunterricht-f%C3%BCr-firmen"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/neuigkeiten/nachrichtendetails/pressemitteilung-erfolgreiche-seed-finanzierung-ein-neues-teammitglied-und-einzug-in-den-technopark"
+to = "https://www.blog.matchspace-music.ch/post/pressemitteilung-seed-finanzierung-ein-neues-teammitglied-und-einzug-in-den-technopark"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/neuigkeiten/nachrichtendetails/webinarreihe-zu-digitalem-marketing-fuer-musiklehrpersonen-an-der-hkb"
+to = "https://www.blog.matchspace-music.ch/post/webinarreihe-zu-digitalem-marketing-f%C3%BCr-musiklehrpersonen-an-der-hkb"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/neuigkeiten/nachrichtendetails/willkommen-im-team-janina"
+to = "https://www.blog.matchspace-music.ch/post/willkommen-im-team-janina"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/neuigkeiten/nachrichtendetails/willkommen-sebastian-heimann"
+to = "https://www.blog.matchspace-music.ch/post/willkommen-im-team-sebastian-heimann"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/neuigkeiten/nachrichtendetails/zu-besuch-in-der-notenloft-zuerich-nord"
+to = "https://www.blog.matchspace-music.ch/post/zu-besuch-in-der-notenloft-zürich-nord"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-en/news/in-the-news/featured-article-in-the-online-magazine-mamalicous"
+to = "https://www.blog.matchspace-music.ch/en/post/featured-article-in-the-online-magazine-mamalicous"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-en/news/in-the-news/featured-article-in-the-swiss-music-newspaper"
+to = "https://www.blog.matchspace-music.ch/en/post/featured-article-in-the-swiss-music-newspaper"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-en/news/in-the-news/featured-in-tadah-magazine"
+to = "https://www.blog.matchspace-music.ch/en/post/matchspace-music-in-tadah-magazine"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-en/news/in-the-news/first-episode-of-sunjam-zugabe-podcast"
+to = "https://www.blog.matchspace-music.ch/en/post/first-episode-of-sunjam-zugabe-podcast"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-en/news/in-the-news/matchspace-music-featured-in-hr-today"
+to = "https://www.blog.matchspace-music.ch/en/post/matchspace-music-featured-in-hr-today"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-en/news/in-the-news/swiss-startup-days-finalist-2021"
+to = "https://www.blog.matchspace-music.ch/en/post/swiss-startup-days-finalist-2021-1"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-en/news/news-detail/150-music-teachers-milestone"
+to = "https://www.blog.matchspace-music.ch/en/post/150-music-teachers-milestone"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-en/news/news-detail/employee-engagement-through-music"
+to = "https://www.blog.matchspace-music.ch/en/post/employee-engagement-through-music"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-en/news/news-detail/press-release-successful-funding-round-a-new-team-member-and-moving-into-technopark"
+to = "https://www.blog.matchspace-music.ch/en/post/press-release-successful-seed-funding-round-a-new-team-member-and-moving-into-technopark"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-en/news/news-detail/visiting-notenloft-in-northern-zurich"
+to = "https://www.blog.matchspace-music.ch/en/post/visiting-notenloft-in-northern-zurich"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-en/news/news-detail/webinar-series-on-digital-marketing-at-hbk"
+to = "https://www.blog.matchspace-music.ch/en/post/webinar-series-on-digital-marketing-at-hkb"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-en/news/news-detail/welcome-to-the-team-janina"
+to = "https://www.blog.matchspace-music.ch/en/post/welcome-to-the-team-janina"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-en/news/news-detail/welcome-to-the-team-sebastian"
+to = "https://www.blog.matchspace-music.ch/en/post/welcome-to-the-team-sebastian"
+status = 301
+force = true
+
+[[redirects]]
+from = "/musik-hug"
+to = "/ch-de/rabatte/15-prozent-rabatt-auf-musikunterricht-musik-hug"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-en/musik-hug-vouchers"
+to = "/ch-en/discounts/15-percent-discount-on-music-lessons-musik-hug"
+status = 301
+force = true
+
+[[redirects]]
+from = "/kpt"
+to = "/ch-de/kpt"
+status = 301
+force = true
+
+[[redirects]]
+from = "/visana"
+to = "/ch-de/rabatte/15-prozent-rabatt-auf-musikunterricht-visana"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/musik-hug-gutscheine"
+to = "/ch-de/rabatte/15-prozent-rabatt-auf-musikunterricht-musik-hug"
+status = 301
+force = true
+
+[[redirects]]
+from = "/swica"
+to = "/ch-de/rabatte/15-prozent-rabatt-auf-musikunterricht-swica"
+status = 301
+force = true
+
+[[redirects]]
+from = "/swibeco"
+to = "/ch-de/rabatte/15-prozent-rabatt-auf-musikunterricht-swibeco"
+status = 301
+force = true 
+
+[[redirects]]
+from = "/corporate-benefits"
+to = "/ch-de/rabatte/15-prozent-rabatt-auf-musikunterricht-corporate-benefits"
+status = 301
+force = true
+
+[[redirects]]
+from = "/css"
+to = "/ch-de/rabatte/15-prozent-rabatt-auf-musikunterricht-css"
+status = 301
+force = true
+
+[[redirects]]
+from = "/sanitas"
+to = "/ch-de/rabatte/30-prozent-rabatt-auf-musikunterricht-sanitas"
+status = 301
+force = true
+
+[[redirects]]
+from = "/winti-piano"
+to = "/ch-de/rabatte/15-prozent-rabatt-auf-musikunterricht-winti-piano"
+status = 301
+force = true
+
+[[redirects]]
+from = "/[language]/[slug]/[location]"
+to = "/ch-de"
+status = 301
+force = true
+
+[[redirects]]
+from = "/für-unternehmen)"
+to = "/ch-de/unsere-kunden/musikunterricht-fuer-firmen"
+status = 301
+force = true
+
+[[redirects]]
+from = "/f%C3%BCr-unternehmen)"
+to = "/ch-de/unsere-kunden/musikunterricht-fuer-firmen"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/gitarre-unterricht/m"
+to = "/ch-de/gitarre-unterricht/schweiz"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/suchen"
+to = "/ch-de"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-en/search"
+to = "/ch-en"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/e-gitarre-unterricht/d"
+to = "/ch-de/e-gitarre-unterricht/schweiz"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/musikproduktion-unterricht/schweiz"
+to = "/ch-de/musikproduktion-unterricht/schweiz"
+status = 200
+
+[[redirects]]
+from = "/ch-de/musikproduktion-unterricht/*"
+to = "/ch-de/musikproduktion-unterricht/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/badoneon-unterricht/*"
+to = "/ch-de/bandoneon-unterricht/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-en/clarinet-lessons-lessons/*"
+to = "/ch-en/clarinet-lessons/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-en/-lessons/*"
+to = "/ch-en"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/-unterricht/*"
+to = "/ch-de"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/jobs/13-klavierlehrer-winterthur-winterthur-schweiz"
+to = "/ch-de/jobs/13-klavierlehrer-winterthur-z%C3%BCrich-schweiz"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/jobs/14-gitarrenlehrer-winterthur-winterthur-schweiz"
+to = "/ch-de/jobs/14-gitarrenlehrer-winterthur-z%C3%BCrich-schweiz"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/jobs/15-ukulelenlehrer-winterthur-winterthur-schweiz"
+to = "/ch-de/jobs/15-ukulelenlehrer-winterthur-z%C3%BCrich-schweiz"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/jobs/16-geigenlehrer-winterthur-winterthur-schweiz"
+to = "/ch-de/jobs/16-geigenlehrer-winterthur-z%C3%BCrich-schweiz"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/jobs/17-schlagzeuglehrer-winterthur-winterthur-schweiz"
+to = "/ch-de/jobs/17-schlagzeuglehrer-winterthur-z%C3%BCrich-schweiz"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/jobs/18-gesangslehrer-winterthur-winterthur-schweiz"
+to = "/ch-de/jobs/18-gesangslehrer-winterthur-z%C3%BCrich-schweiz"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-en/jobs/19-piano-teacher-winterthur-winterthur-switzerland"
+to = "/ch-en/jobs/19-piano-teacher-winterthur-zurich-switzerland"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-en/jobs/20-guitar-teacher-winterthur-winterthur-switzerland"
+to = "/ch-en/jobs/20-guitar-teacher-winterthur-zurich-switzerland"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-en/jobs/21-ukulele-teacher-winterthur-winterthur-switzerland"
+to = "/ch-en/jobs/21-ukulele-teacher-winterthur-zurich-switzerland"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-en/jobs/22-violin-teacher-winterthur-winterthur-switzerland"
+to = "/ch-en/jobs/22-violin-teacher-winterthur-zurich-switzerland"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-en/jobs/23-drums-teacher-winterthur-winterthur-switzerland"
+to = "/ch-en/jobs/23-drums-teacher-winterthur-zurich-switzerland"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-en/jobs/24-singing-teacher-winterthur-winterthur-switzerland"
+to = "/ch-en/jobs/24-singing-teacher-winterthur-zurich-switzerland"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/jobs/37-klavierlehrer-bern-z%C3%BCrich-schweiz"
+to = "/ch-de/jobs/37-klavierlehrer-bern-bern-schweiz"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/jobs/61-klavierlehrer-aarau-aarau-schweiz"
+to = "/ch-de/jobs/61-klavierlehrer-aarau-aargau-schweiz"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/jobs/62-gitarrenlehrer-aarau-aarau-schweiz"
+to = "/ch-de/jobs/62-gitarrenlehrer-aarau-aargau-schweiz"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/jobs/63-ukulelenlehrer-aarau-aarau-schweiz"
+to = "/ch-de/jobs/63-ukulelenlehrer-aarau-aargau-schweiz"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/jobs/64-geigenlehrer-aarau-aarau-schweiz"
+to = "/ch-de/jobs/64-geigenlehrer-aarau-aargau-schweiz"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/jobs/65-schlagzeuglehrer-aarau-aarau-schweiz"
+to = "/ch-de/jobs/65-schlagzeuglehrer-aarau-aargau-schweiz"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/jobs/66-gesangslehrer-aarau-aarau-schweiz"
+to = "/ch-de/jobs/66-gesangslehrer-aarau-aargau-schweiz"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-en/jobs/67-piano-teacher-argovia-argovia-switzerland"
+to = "/ch-en/jobs/67-piano-teacher-aarau-aargau-switzerland"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-en/jobs/68-guitar-teacher-argovia-argovia-switzerland"
+to = "/ch-en/jobs/68-guitar-teacher-aarau-aargau-switzerland"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-en/jobs/69-ukulele-teacher-argovia-argovia-switzerland"
+to = "/ch-en/jobs/69-ukulele-teacher-aarau-aargau-switzerland"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-en/jobs/70-violin-teacher-argovia-argovia-switzerland"
+to = "/ch-en/jobs/70-violin-teacher-aarau-aargau-switzerland"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-en/jobs/71-drums-teacher-argovia-argovia-switzerland"
+to = "/ch-en/jobs/71-drums-teacher-aarau-aargau-switzerland"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-en/jobs/72-singing-teacher-argovia-argovia-switzerland"
+to = "/ch-en/jobs/72-singing-teacher-aarau-aargau-switzerland"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/geige%20(violine)-unterricht/*"
+to = "/ch-de/geige-unterricht/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/cello%20(violoncello)-unterricht/*"
+to = "/ch-de/cello-unterricht/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-en/transverse%20flute-lessons/*"
+to = "/ch-en/flute-lessons/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-en/music-lessons/switzerland"
+to = "/ch-en/music-lessons"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/musikunterricht/schweiz"
+to = "/ch-de/musikunterricht"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/klavier-unterricht/zrich-kantonzrich-schweiz"
+to = "/ch-de/klavier-unterricht/z%C3%BCrich-kanton%20z%C3%BCrich-schweiz"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/gesang-unterricht/zrich-kantonzrich-schweiz"
+to = "/ch-de/gesang-unterricht/z%C3%BCrich-kanton%20z%C3%BCrich-schweiz"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/geigen-unterricht/*"
+to = "/ch-de/geige-unterricht/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/geige%20%28violine%29-unterricht/*"
+to = "/ch-de/geige-unterricht/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/geige%20%28violine%29-unterricht/*"
+to = "/ch-de/geige-unterricht/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "/[language]/teachers/[id]"
+to = "/ch-de"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/cello%20%28violoncello%29-unterricht/*"
+to = "/ch-de/cello-unterricht/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/bratsche%20%28viola%29-unterricht/*"
+to = "/ch-de/bratsche-unterricht/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/music%20production-unterricht/*"
+to = "/ch-de/musikproduktion-unterricht/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/music%20recording-unterricht/*"
+to = "/ch-de/musikaufnahme-unterricht/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/diatonische%20%0Amundharmonika-unterricht/*"
+to = "/ch-de/mundharmonika-unterricht/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/b%C3%BChnenpresenz-unterricht/*"
+to = "/ch-de/b%C3%BChnenpr%C3%A4senz-unterricht/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/lute-unterricht/*"
+to = "/ch-de/laute-unterricht/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/piano-unterricht/*"
+to = "/ch-de/klavier-unterricht/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "/[language]/*"
+to = "/ch-de"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/lyra-unterricht/*"
+to = "/ch-de/leier-unterricht/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/klavierunterricht"
+to = "/ch-de/musikunterricht/klavierunterricht"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-en/schools/mzo/music-school-drnten-mzo"
+to = "/ch-en/schools/mzo/music-school-d%C3%BCrnten-mzo"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/schools/mzo/musikschule-drnten-mzo"
+to = "/ch-de/schools/mzo/musikschule-d%C3%BCrnten-mzo"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/schools/mzo/musikschule-bretswil-mzo"
+to = "/ch-de/schools/mzo/musikschule-b%C3%A4retswil-mzo"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-en/schools/mzo/music-school-bretswil-mzo"
+to = "/ch-en/schools/mzo/music-school-b%C3%A4retswil-mzo"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-en/schools/mzo/music-school-pfffikon-mzo"
+to = "/ch-en/schools/mzo/music-school-pf%C3%A4ffikon-mzo"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/schools/mzo/musikschule-pfffikon-mzo"
+to = "/ch-de/schools/mzo/musikschule-pf%C3%A4ffikon-mzo"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/schools/mzo/musikschule-rti-mzo"
+to = "/ch-de/schools/mzo/musikschule-r%C3%BCti-mzo"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-en/schools/mzo/music-school-rti-mzo"
+to = "/ch-en/schools/mzo/music-school-r%C3%BCti-mzo"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-en/schools/mzo/music-school-grningen-mzo"
+to = "/ch-en/schools/mzo/music-school-gr%C3%BCningen-mzo"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/schools/mzo/musikschule-grningen-mzo"
+to = "/ch-de/schools/mzo/musikschule-gr%C3%BCningen-mzo"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-de/schools/mzo/musikschule-seegrben-mzo"
+to = "/ch-de/schools/mzo/musikschule-seegr%C3%A4ben-mzo"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ch-en/schools/mzo/music-school-seegrben-mzo"
+to = "/ch-en/schools/mzo/music-school-seegr%C3%A4ben-mzo"
+status = 301
+force = true

@@ -1,0 +1,13 @@
+.ms_blog_image_Wrapper {
+    position: relative;
+    padding-bottom: 66.25%;
+    height: 0;
+}
+.ms_blog_image_Wrapper Image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

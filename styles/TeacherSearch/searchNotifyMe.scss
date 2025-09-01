@@ -1,0 +1,44 @@
+.notify-me {
+  padding: 40px 40px 30px;
+  &-pair {
+    @apply grid grid-cols-2 gap-3;
+  }
+  &-input {
+    @apply w-full p-2 pl-3 border rounded-lg focus:outline-none;
+  }
+  &-error {
+    @apply ml-3 text-14px text-red;
+  }
+  &-textarea {
+    @apply w-full px-2 py-2 pl-3 border rounded-lg focus:outline-none;
+  }
+  &-buttons {
+    @apply flex items-center justify-end mt-8;
+    button {
+      height: 48px;
+      padding: 0 8px;
+      font-size: 15px;
+      min-width: 150px;
+      font-weight: 500;
+    }
+    .btn-primary {
+      @apply ml-[16px];
+    }
+  }
+
+  @media (max-width: 550px) {
+    &-pair {
+      @apply grid-cols-1 gap-0;
+    }
+    &-buttons {
+      @apply mt-5;
+    }
+  }
+
+  @media (max-width: 450px) {
+    padding: 30px 10px;
+    &-buttons {
+      @apply grid grid-cols-[130px_1fr] gap-3;
+    }
+  }
+}

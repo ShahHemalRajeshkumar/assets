@@ -1,0 +1,77 @@
+.page-loading {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99999;
+    position: fixed;
+    background-color: white;
+    &-inner {
+        background-color: rgba(0, 0, 0, 0.25);
+    }
+    &.withHeader{
+        top: 85px;
+    }
+    @media (max-width: 1280px) {
+        &.withHeader{
+            top: 62px;
+        }
+    }
+    .loading-balls {
+        left: 0;
+        top: 45%;
+        right: 0;
+        width: 70px;
+        margin: 0 auto;
+        position: absolute;
+        text-align: center;
+        .ball {
+            -webkit-animation: bouncedelay 2s infinite cubic-bezier(0.62, 0.28, 0.23, 0.99) both;
+            animation: bouncedelay 2s infinite cubic-bezier(0.62, 0.28, 0.23, 0.99) both;
+            border-radius: 50%;
+            display: inline-block;
+            height: 15px;
+            position: relative;
+            width: 15px;
+        }
+        .first-ball {
+            -webkit-animation-delay: -0.16s;
+            animation-delay: -0.16s;
+        }
+        .second-ball {
+            -webkit-animation-delay: -0.08s;
+            animation-delay: -0.08s;
+        }
+    }
+}
+
+@keyframes bouncedelay {
+    0% {
+        background-color: #21697c;
+        bottom: 0;
+    }
+    16.66% {
+        background-color: #21697c;
+        bottom: 40px;
+    }
+    33.33% {
+        background-color: #21697c;
+        bottom: 0;
+    }
+    50% {
+        background-color: #f9843b;
+        bottom: 40px;
+    }
+    66.66% {
+        background-color: #f9843b;
+        bottom: 0;
+    }
+    83.33% {
+        background-color: #21697c;
+        bottom: 40px;
+    }
+    100% {
+        background-color: #21697c;
+        bottom: 0;
+    }
+}

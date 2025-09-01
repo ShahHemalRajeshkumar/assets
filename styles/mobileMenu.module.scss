@@ -1,0 +1,14 @@
+.ms {
+  &-nav--highlight {
+    -webkit-tap-highlight-color: transparent;
+  }
+  &-nav-scroll {
+    height: calc(100vh - 80px);
+  }
+  &-mobile-icon-home {
+    object-position: -160px 0;
+  }
+}
+.internal-links-list {
+  height: calc(100vh - 240px);
+}

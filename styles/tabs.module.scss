@@ -1,0 +1,15 @@
+.react-tabs__tab {
+  padding: 6px 0 !important;
+  cursor: pointer;
+  &--selected {
+    border-color: transparent !important;
+    border-bottom: 4px solid rgb(var(--color-primary)) !important;
+    background: none !important;
+    color: rgb(var(--color-primary)) !important;
+  }
+  &-list {
+    border-bottom: 1px solid rgb(var(--color-disable)) !important;
+    display: flex !important;
+    justify-content: space-between !important;
+  }
+}

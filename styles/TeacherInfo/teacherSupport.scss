@@ -1,0 +1,59 @@
+.teacher-info-support {
+  display: grid;
+  min-height: 260px;
+  padding: 32px 24px;
+  border-radius: 8px;
+  align-items: center;
+  background: #ffffff;
+  grid-template-columns: 1fr 290px;
+  margin-top: 40px;
+  &-content {
+    padding-right: 40px;
+  }
+  &-manager {
+    @apply flex flex-col items-center justify-center;
+    height: 100%;
+    padding-left: 40px;
+    border-left: 1px solid #e4e7ec;
+  }
+
+  a.btn-primary {
+    width: 100%;
+    height: 48px;
+    padding: 0px;
+    max-width: 350px;
+    margin-bottom: 0px;
+  }
+  @media (max-width: 900px) {
+    a.btn-primary {
+      height: 40px;
+      max-width: 100%;
+      margin: 0 auto 24px;
+    }
+  }
+
+  @media (max-width: 650px) {
+    @apply flex items-center flex-col text-left;
+
+    &-content {
+      @apply flex flex-col;
+      padding-right: 0px;
+      h3 {
+        font-size: 18px;
+        line-height: 22px;
+      }
+    }
+    &-manager {
+      width: 100%;
+      border-left: none;
+      padding-top: 24px;
+      padding-left: 0px;
+      border-top: 1px solid #e4e7ec;
+    }
+  }
+  @media (max-width: 400px) {
+    button.btn-primary {
+      max-width: 100% !important;
+    }
+  }
+}

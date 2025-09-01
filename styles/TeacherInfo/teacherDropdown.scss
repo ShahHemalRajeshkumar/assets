@@ -1,0 +1,35 @@
+.teacher-dropdown-wrapper {
+  position: relative;
+  .teacher-dropdown-more,
+  .teacher-dropdown-menu,
+  .teacher-dropdown-instruments {
+    top: 0px;
+    right: 0px;
+    padding: 6px;
+    z-index: 100;
+    min-width: 200px;
+    position: absolute;
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0px 4px 8px -2px rgba(16, 24, 40, 0.1), 0px 2px 4px -2px rgba(16, 24, 40, 0.06);
+  }
+  .teacher-dropdown-more {
+    left: 0px;
+  }
+  .teacher-dropdown-menu {
+    right: -5px;
+    padding: 0px;
+    box-shadow: none;
+    padding-top: 52px;
+    border-radius: 0px;
+    background: transparent;
+    .teacher-header-menu {
+      padding: 6px;
+      min-width: 220px;
+      min-height: 300px;
+      border-radius: 8px;
+      background: #ffffff;
+      box-shadow: 0px 4px 8px -2px rgba(16, 24, 40, 0.1), 0px 2px 4px -2px rgba(16, 24, 40, 0.06);
+    }
+  }
+}

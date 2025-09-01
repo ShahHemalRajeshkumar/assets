@@ -1,0 +1,162 @@
+.teacher-content-head {
+  @apply flex flex-col;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  background: #ffffff;
+  &-overlay {
+    position: relative;
+    width: 100% !important;
+    span {
+      width: 100% !important;
+    }
+    &::after {
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      content: "";
+      position: absolute;
+      border-radius: 8px 8px 0 0;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0, rgba(0, 0, 0, 0.1) 0.01%, rgba(0, 0, 0, 0.6) 100%);
+    }
+  }
+  &-title {
+    @apply ml-6 mr-16 text-white text-14px font-semibold;
+    text-shadow: -0.2px -0.2px 0.2px #000000, 0.2px -0.2px 0.2px #000000, -0.2px 0.2px 0.2px #000000,
+      0.2px 0.2px 0.2px #000000;
+  }
+  &-photo-wrap {
+    @apply absolute grid items-center;
+    top: -120px;
+    grid-template-columns: 160px 1fr;
+    h1 {
+      max-width: 550px;
+      text-align: left;
+    }
+    @media (max-width: 650px) {
+      grid-template-columns: 96px 1fr;
+      h1 {
+        top: -50px;
+        position: relative;
+      }
+    }
+  }
+  &-photo {
+    @apply rounded-full;
+    border: 2px solid white !important;
+  }
+  &-info {
+    @apply grid gap-4 grid-cols-2;
+    &-buttons {
+      @apply flex flex-col;
+      .btn-orange,
+      .btn-primary {
+        height: 44px;
+        min-width: 250px;
+        padding: 8px 32px;
+      }
+    }
+  }
+}
+
+.teacher-content-tabs {
+  .teacher-content-tabs-item {
+    @apply uppercase text-14px font-medium cursor-pointer pb-2;
+    color: rgba(0, 0, 0, 0.68);
+    border-bottom: 4px solid transparent;
+    &:hover,
+    &__active {
+      border-bottom: 4px solid #21697c;
+    }
+    &__no-border {
+      border-bottom: 4px solid transparent !important;
+    }
+  }
+  .teacher-content-tabs-more-item {
+    @apply uppercase text-14px font-medium cursor-pointer;
+    padding: 8px 16px;
+    border-radius: 8px;
+    &:hover {
+      background: #f2f4f7;
+    }
+  }
+}
+
+.teacher-content-tabs-fixed {
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: 999;
+  position: fixed;
+  background: #ffffff;
+  box-shadow: 0px 4px 8px -2px rgba(16, 24, 40, 0.1), 0px 2px 4px -2px rgba(16, 24, 40, 0.06);
+  &-max-index {
+    z-index: 99999;
+  }
+  .teacher-content-tabs-wrapper {
+    display: grid;
+    margin: 0 auto;
+    grid-gap: 24px;
+    max-width: 1280px;
+    padding-left: 20px;
+    grid-template-columns: 1fr 380px;
+    .teacher-content-tabs {
+      height: 42px;
+      .teacher-content-tabs-item {
+        padding-top: 8px;
+      }
+    }
+  }
+  .contact-button {
+    @apply tracking-widest btn-orange uppercase;
+    left: 20px;
+    width: 240px;
+    height: 40px;
+    bottom: 20px;
+    padding: 0 16px;
+    font-size: 15px;
+    position: fixed;
+    font-weight: 500;
+    letter-spacing: 0px;
+    @media (max-width: 600px) {
+      left: 20px;
+      padding: 0 16px;
+      letter-spacing: 0px;
+      width: calc(100% - 135px);
+    }
+  }
+}
+
+.teacher-content-tabs-info-block {
+  @apply flex items-center justify-start;
+  margin: 10px 0px;
+  padding-left: 20px;
+}
+
+.teacher-content-instruments {
+  div[class^="ms_instruments-"]::before {
+    width: 48px;
+    color: #424953;
+  }
+  &__popup {
+    z-index: 10;
+    grid-gap: 4px;
+    display: grid;
+    grid-template-columns: repeat(6, 96px);
+  }
+  .teacher-content-instrument {
+    @apply flex flex-col items-center justify-center;
+    min-width: 96px;
+    height: 116px;
+    text-align: center;
+    border-radius: 8px;
+    border: 1px solid #d0d5dd;
+    &__primary {
+      cursor: pointer;
+      border: 1px solid #21697c;
+    }
+  }
+  .teacher-dropdown {
+    right: 0px;
+  }
+}

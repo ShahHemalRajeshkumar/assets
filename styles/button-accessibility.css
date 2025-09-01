@@ -1,0 +1,37 @@
+/* Button accessibility fixes */
+
+/* Fix buttons without accessible names */
+button:not([aria-label]):not([aria-labelledby]):not([title]):empty::before {
+  content: attr(data-action, "Button");
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Close button styles */
+button.text-gray-600[class*="hover:text-red-500"]::before {
+  content: "Close";
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Generic button with gray text */
+button.text-gray-500:empty::before {
+  content: "Action button";
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Ensure all buttons have proper focus indicators */
+button:focus-visible {
+  outline: 2px solid #2563eb !important;
+  outline-offset: 2px !important;
+}
