@@ -209,22 +209,22 @@ const Navigation = ({
                 language={language}
               />
             </div>
-            <div className="flex.items-center.hidden.lg:flex min-h-[48px].min-w-[220px]">
-              <div className="mr-[32px]">
+            <div className="flex items-center hidden lg:flex min-h-[48px] min-w-[280px]">
+              <div className="mr-[24px]">
                 <LangToggle language={language} setLanguage={setLanguage} />
               </div>
-              <div className="inline-flex">
+              <div className="inline-flex gap-4">
                 <button
                   type="button"
                   onClick={() => loginSignup('login')}
-                  className="w-[120px] mr-4 tracking-widest lg:!px-3 min-[1480px]:!px-11 btn-primary bg-primary"
+                  className="w-[120px] tracking-widest lg:!px-3 min-[1480px]:!px-11 btn-primary bg-primary focus:outline-none"
                 >
                   {blok?.content?.log_in || 'Login'}
                 </button>
                 <button
                   type="button"
                   onClick={() => loginSignup('signup')}
-                  className="w-[120px] tracking-widest lg:!px-3 min-[1480px]:!px-11 btn-primary bg-primary"
+                  className="w-[120px] tracking-widest lg:!px-3 min-[1480px]:!px-11 btn-primary bg-primary focus:outline-none"
                 >
                   {blok?.content?.registers || 'Register'}
                 </button>

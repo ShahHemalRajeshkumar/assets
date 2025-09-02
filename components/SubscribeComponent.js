@@ -49,7 +49,7 @@ const SubscribeComponent = ({ component, options, blok }) => {
   };
   return (
     <div>
-      <div className='flex items-center text-black text-opacity-75 cursor-pointer dropdown inline-block relative'>
+      <div className='flexitems-center text-black text-opacity-75 cursor-pointer dropdown inline-block relative'>
         <select
           className='bg-white text-black opacity-60rounded pr-3 py-2 outline-none w-full'
           onChange={(e) => selectNewsLetter(e)}>

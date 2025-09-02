@@ -34,8 +34,6 @@ const FooterLogoSection = ({ footerData, isTeacherInfoPage, language }) => {
       classNames = 'elfsight-app-fd25024a-2452-4e98-9f1a-54ce628a8d66';
     }
   }
-
-
   return (
     <>
     <div className='md:pb-8 lg:basis-1/3 xl:pb-0 lg:w-full lg:max-w-[270px] '>

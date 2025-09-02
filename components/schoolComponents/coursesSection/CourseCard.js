@@ -130,34 +130,40 @@ const CourseCard = React.memo(({ item, teacher, language, onClick, imageSize, se
               </div>
             )}
           </div>
-          {(item?.min_prices?.kids?.price || item?.min_prices?.adults?.price) && (
-            <div className="mt-3">
-              <h6 className="text-[12px] font-semibold">
-                {translateENtoDE('Starting from', language) + ':'}
-              </h6>
-              <div className="flex gap-3 mt-2">
-                {item?.min_prices?.kids?.price && (
-                  <div>
-                    {desktopPriceCard(item?.min_prices?.kids, lowestAndHighest[0], language)}
-                  </div>
-                )}
-                {item?.min_prices?.adults?.price && (
-                  <div>
-                    {desktopPriceCard(item?.min_prices?.adults, lowestAndHighest[1], language)}
-                  </div>
-                )}
-              </div>
-            </div>
-          )}
         </div>
-        <div
-          className={cx(
-            'font-medium flex items-center justify-center border border-[#21697C] rounded-full py-1.5 px-3 max-w-[155px] mt-2 cursor-pointer hover:bg-[#21697C]/10',
-            'text-[12px] lg:text-[14px] uppercase text-[#21697C]'
-          )}
-        >
-          {translateENtoDE('MORE DETAILS', language)}
-          <ChevronRightPrimary className="ml-1" />
+        
+        <div className="flex items-end justify-between mt-3">
+          <div>
+            {(item?.min_prices?.kids?.price || item?.min_prices?.adults?.price) && (
+              <div>
+                <h6 className="text-[12px] font-semibold">
+                  {translateENtoDE('Starting from', language) + ':'}
+                </h6>
+                <div className="flex gap-3 mt-2">
+                  {item?.min_prices?.kids?.price && (
+                    <div>
+                      {desktopPriceCard(item?.min_prices?.kids, lowestAndHighest[0], language)}
+                    </div>
+                  )}
+                  {item?.min_prices?.adults?.price && (
+                    <div>
+                      {desktopPriceCard(item?.min_prices?.adults, lowestAndHighest[1], language)}
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
+          </div>
+          
+          <div
+            className={cx(
+              'font-medium flex items-center justify-center border border-[#21697C] rounded-full py-1.5 px-3 max-w-[155px] cursor-pointer hover:bg-[#21697C]/10',
+              'text-[12px] lg:text-[14px] uppercase text-[#21697C]'
+            )}
+          >
+            {translateENtoDE('MORE DETAILS', language)}
+            <ChevronRightPrimary className="ml-1" />
+          </div>
         </div>
       </div>
     </div>

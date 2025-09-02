@@ -3,7 +3,6 @@ import { useRouter } from 'next/router';
 import { translateENtoDE } from 'functions/translator';
 import dynamic from 'next/dynamic';
 import cx from 'classnames';
-
 import AboutSection from './Instruments/AboutSection';
 import OtherLocationSection from './OtherLocationSection';
 import InstrumentRelatedLocation from './instrumentRelatedLocation';
@@ -130,7 +129,7 @@ function OrganizationContent({
               {moreNavs.length > 0 && (
                 <span
                   onClick={() => setShowMore(!showMore)}
-                  className='hidden md:inline-block text-[13px] font-semibold uppercase border-b-[3px] text-[#000000AD] hover:text-black cursor-pointer pt-1.5'>
+                  className='text-[13px] font-Roboto font-semibold uppercase pb-[6px] cursor-pointer border-b-[3px] border-transparent text-[#000000AD] hover:text-black hover:border-[#21697C]'>
                   {translateENtoDE('More', language)}
                 </span>
               )}
@@ -152,7 +151,6 @@ function OrganizationContent({
           </div>
         </div>
       )}
-
       <div id='about' className='org-gallery mb-[20px]'>
         <div className='teacher-content-block md:rounded-xl p-[16px] md:p-[24px]'>
           <div className='flex items-center gap-2 mb-[20px]'>
@@ -163,7 +161,6 @@ function OrganizationContent({
           <AboutSection organizationData={organizationData} language={language} instrumentsData={instrumentsData} setCommonFilterQuery={setCommonFilterQuery} commonFilterQuery={commonFilterQuery} />
         </div>
       </div>
-
       {organizationData?.teachers?.length > 0 && (
         <div id='teachers' className='org-gallery'>
           <TeacherContentWrapper
@@ -194,7 +191,6 @@ function OrganizationContent({
           />
         </div>
       )}
-
       {organizationData?.gallery?.length > 0 && (
         <div id='gallery' className='org-gallery xs:h-[360px] sm:mb-[5px]'>
           <ContentBlock name='gallery' language={language} maxItemsVisible={0} data={organizationData.gallery} onShowPopup={showPopup} label={translateENtoDE('Gallery', language)}>
@@ -202,7 +198,6 @@ function OrganizationContent({
           </ContentBlock>
         </div>
       )}
-
       <div id='location' className='org-gallery mb-[20px]'>
         <ContentBlock name='location' withPopup={false} language={language} label={translateENtoDE('Location', language)}>
           <SchoolMapBoxWrapper language={language} locations={organizationData?.addresses} query={query} />
@@ -224,5 +219,4 @@ function OrganizationContent({
     </div>
   );
 }
-
 export default OrganizationContent;

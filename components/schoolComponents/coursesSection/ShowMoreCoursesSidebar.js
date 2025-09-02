@@ -1,9 +1,8 @@
-import { FixedSizeList as List } from 'react-window';
 import CoursesSelectField from './CoursesSelectField';
 import CourseCard from './CourseCard';
 import { translateENtoDE } from 'functions/translator';
 import CloseIcon from '@/components/icons/closeIcon';
-import React, { useCallback, useMemo } from 'react';
+import React from 'react';
 
 const ShowMoreCoursesSidebar = ({
   data,
@@ -17,26 +16,6 @@ const ShowMoreCoursesSidebar = ({
   filteredCourses,
   handleInstrumentChange,
 }) => {
-  const Row = useCallback(
-    ({ index, style }) => {
-      const item = filteredCourses[index];
-      if (!item) return null;
-      return (
-        <div style={style}>
-          <CourseCard
-            item={item}
-            key={item?.id || index}
-            courseIndex={index}
-            language={language}
-            imageSize={imageSize}
-            onClick={() => handleShowDetail(item)}
-          />
-        </div>
-      );
-    },
-    [filteredCourses, language, imageSize, handleShowDetail]
-  );
-
   const courseCount = filteredCourses?.length || 0;
 
   return (
@@ -61,16 +40,21 @@ const ShowMoreCoursesSidebar = ({
           courseFilterQuery={courseFilterQuery}
         />
       </div>
-      <div className="p-[16px] sm:p-[24px]">
+      <div className="p-[16px] sm:p-[24px] max-h-[600px] overflow-y-auto">
         {courseCount > 0 ? (
-          <List
-            height={600} 
-            itemCount={courseCount}
-            itemSize={160} 
-            width={'100%'}
-          >
-            {Row}
-          </List>
+          <div className="space-y-4">
+            {filteredCourses.map((item, index) => (
+              <div key={item?.id || index} className="mb-6">
+                <CourseCard
+                  item={item}
+                  courseIndex={index}
+                  language={language}
+                  imageSize={imageSize}
+                  onClick={() => handleShowDetail(item)}
+                />
+              </div>
+            ))}
+          </div>
         ) : (
           <div className="text-gray-500 text-center mt-4">
             {translateENtoDE('Courses not available', language)}
