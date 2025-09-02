@@ -43,7 +43,7 @@ const OrganizationCard = memo(function OrganizationCard({
       : item?.mzo_region_full_name?.de;
     
     const url = `/${language}/schools/mzo/${schoolName?.toLowerCase().split(' ').join('-')}?instrument=${instrument?.key ?? ''}&location=${locationName}&coords=${schoolLocation.latitude},${schoolLocation.longitude}`;
-    
+    // small change
     window?.open(url, '_blank');
   }, [language, instrument?.key, locationName]);
 
@@ -84,6 +84,7 @@ const OrganizationCard = memo(function OrganizationCard({
     
     return getTeacherAges(age_taught_data, language);
   }, [item?.age_taught, language]);
+  
   return (
     <div
       onClick={() => handleOpenSchool(item)}
@@ -142,8 +143,9 @@ const OrganizationCard = memo(function OrganizationCard({
             </div>
           )}
           {!!isImageError && <div className={cx(`${initialsClasses} h-[96px] w-[96px]`)}>{initials}</div>}
+         
         </div>
-
+    
         <div>
           <div className={`${Styles.card_instruments} mb-1`}>
             <div className='flex items-center'>
