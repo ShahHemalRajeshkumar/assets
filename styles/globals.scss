@@ -3,6 +3,13 @@
 @import "./button-accessibility.css";
 @import "./list-accessibility.css";
 
+:root {
+  --color-primary: 33, 105, 124;
+  --color-dark-primary: 26, 84, 99;
+  --color-black: 0, 0, 0;
+  --color-white: 255, 255, 255;
+}
+
 html,
 body {
   padding: 0;
