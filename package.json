@@ -4,13 +4,15 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node force-update.js",
     "build": "next build",
     "start": "next start",
     "analyze": "ANALYZE=true next build",
     "lint": "next lint",
     "purge-css-files": "./scripts/purge-css-files.sh",
     "debug-build": "node debug-build.js",
-    "build-debug": "yarn build && yarn debug-build"
+    "build-debug": "yarn build && yarn debug-build",
+    "deploy": "yarn prebuild && yarn build"
   },
   "dependencies": {
     "@bugsnag/browser-performance": "^2.8.0",
