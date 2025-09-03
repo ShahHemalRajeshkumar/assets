@@ -209,7 +209,7 @@ const Navigation = ({
                 language={language}
               />
             </div>
-            <div className="flexitems-center hidden lg:flex min-h-[48px] min-w-[280px]">
+            <div className="flex items-center hidden lg:flex min-h-[48px] min-w-[280px]">
               <div className="mr-[24px]">
                 <LangToggle language={language} setLanguage={setLanguage} />
               </div>

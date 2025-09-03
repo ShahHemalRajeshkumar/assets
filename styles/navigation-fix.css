@@ -1,0 +1,230 @@
+/* Navigation Fix - Ensure critical navigation styles are always loaded */
+
+/* Force load navigation classes */
+.search-header {
+  position: relative;
+}
+
+.search-header.fixed {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 30 !important;
+}
+
+.search-header.sticky {
+  position: sticky !important;
+}
+
+@media (min-width: 1024px) {
+  .search-header.lg\:top-0 {
+    top: 0 !important;
+  }
+  
+  .search-header.lg\:bg-white {
+    background-color: white !important;
+  }
+  
+  .search-header.lg\:py-0 {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  
+  .search-header.lg\:px-8 {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+  
+  .search-header.lg\:shadow-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+  }
+}
+
+@media (min-width: 1536px) {
+  .search-header.xxl\:px-20 {
+    padding-left: 5rem !important;
+    padding-right: 5rem !important;
+  }
+}
+
+/* Ensure navigation module styles are loaded */
+.ms-nav-active {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+  background-color: white !important;
+}
+
+.ms-nav-active-on-search {
+  box-shadow: none !important;
+  background-color: var(--color-primary) !important;
+}
+
+@media (min-width: 1280px) {
+  .ms-nav-position {
+    position: unset !important;
+    top: unset !important;
+  }
+}
+
+/* Ensure button styles are loaded */
+.btn-primary {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0.75rem 2.75rem !important;
+  border-radius: 9999px !important;
+  font-weight: 500 !important;
+  font-size: 16px !important;
+  background-color: rgb(var(--color-primary)) !important;
+  color: white !important;
+  border: 2px solid rgb(var(--color-primary)) !important;
+}
+
+.btn-primary:hover {
+  background-color: rgb(var(--color-dark-primary)) !important;
+}
+
+/* Login/Register button specific styles */
+.w-\[120px\] {
+  width: 120px !important;
+}
+
+.tracking-widest {
+  letter-spacing: 0.1em !important;
+}
+
+.focus\:outline-none:focus {
+  outline: none !important;
+}
+
+.border-2 {
+  border-width: 2px !important;
+}
+
+.border-primary {
+  border-color: rgb(var(--color-primary)) !important;
+}
+
+.rounded-full {
+  border-radius: 9999px !important;
+}
+
+.font-medium {
+  font-weight: 500 !important;
+}
+
+.text-16px {
+  font-size: 16px !important;
+}
+
+.text-white {
+  color: white !important;
+}
+
+.py-3 {
+  padding-top: 0.75rem !important;
+  padding-bottom: 0.75rem !important;
+}
+
+.px-11 {
+  padding-left: 2.75rem !important;
+  padding-right: 2.75rem !important;
+}
+
+.bg-primary {
+  background-color: rgb(var(--color-primary)) !important;
+}
+
+.hover\:bg-dark-primary:hover {
+  background-color: rgb(var(--color-dark-primary)) !important;
+}
+
+/* Mobile menu icon */
+.mobile-menu-icon {
+  font-size: 40px !important;
+}
+
+/* Flex utilities */
+.inline-flex {
+  display: inline-flex !important;
+}
+
+.items-center {
+  align-items: center !important;
+}
+
+.justify-between {
+  justify-content: space-between !important;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap !important;
+}
+
+.min-h-\[48px\] {
+  min-height: 48px !important;
+}
+
+.min-w-\[280px\] {
+  min-width: 280px !important;
+}
+
+.w-\[120px\] {
+  width: 120px !important;
+}
+
+.mr-\[24px\] {
+  margin-right: 24px !important;
+}
+
+.gap-4 {
+  gap: 1rem !important;
+}
+
+.tracking-widest {
+  letter-spacing: 0.1em !important;
+}
+
+@media (min-width: 1024px) {
+  .lg\:\!px-3 {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+  
+  .lg\:flex {
+    display: flex !important;
+  }
+  
+  .lg\:hidden {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1480px) {
+  .min-\[1480px\]\:\!px-11 {
+    padding-left: 2.75rem !important;
+    padding-right: 2.75rem !important;
+  }
+}
+
+/* Text colors */
+.text-primary {
+  color: var(--color-primary) !important;
+}
+
+.text-white {
+  color: white !important;
+}
+
+/* Z-index utilities */
+.z-0 {
+  z-index: 0 !important;
+}
+
+.z-10 {
+  z-index: 10 !important;
+}
+
+.z-30 {
+  z-index: 30 !important;
+}

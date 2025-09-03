@@ -8,7 +8,9 @@
     "start": "next start",
     "analyze": "ANALYZE=true next build",
     "lint": "next lint",
-    "purge-css-files": "./scripts/purge-css-files.sh"
+    "purge-css-files": "./scripts/purge-css-files.sh",
+    "debug-build": "node debug-build.js",
+    "build-debug": "yarn build && yarn debug-build"
   },
   "dependencies": {
     "@bugsnag/browser-performance": "^2.8.0",

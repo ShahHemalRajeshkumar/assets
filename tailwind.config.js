@@ -3,10 +3,46 @@ const breakpoints = require('./config/breakpoints');
 const safelist = require('./config/safelist');
 
 module.exports = {
-  purge: {
-    content: ['./pages/**/*.{ts,tsx,js,jsx}', './components/**/*.{ts,tsx,js,jsx}'],
-    safelist,
-  },
+  content: [
+    './pages/**/*.{ts,tsx,js,jsx}',
+    './components/**/*.{ts,tsx,js,jsx}',
+    './styles/**/*.{css,scss}'
+  ],
+  safelist: [
+    ...safelist,
+    // Navigation specific classes
+    'sticky',
+    'lg:top-0',
+    'z-30',
+    'z-0',
+    'z-10',
+    'bg-white',
+    'lg:bg-white',
+    'bg-opacity-0',
+    'fixed',
+    'top-0',
+    'inset-x-0',
+    'shadow-lg',
+    'flex',
+    'items-center',
+    'justify-between',
+    'flex-nowrap',
+    'py-2',
+    'lg:py-0',
+    'lg:px-8',
+    'px-4',
+    'min-h-[48px]',
+    'min-w-[280px]',
+    'text-primary',
+    'text-white',
+    'material-icons-outlined',
+    'text-40px',
+    // Add pattern matching for dynamic classes
+    { pattern: /ms-nav-.+/ },
+    { pattern: /text-.+/ },
+    { pattern: /bg-.+/ },
+    { pattern: /shadow-.+/ },
+  ],
   theme: {
     borderColor: (theme) => ({
       ...theme('colors'),

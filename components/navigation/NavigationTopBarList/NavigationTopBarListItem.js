@@ -28,7 +28,6 @@ const NavigationTopBarListItem = ({ header, clickMenu, clickedHeader, language }
   const groupFocusVisibleAnchor = '';
   return (
     <li className='relative'>
-      {/* Main navigation item */}
       <div className={headerClass}>
         {internal_link?.length ? (
           <button
@@ -66,7 +65,6 @@ const NavigationTopBarListItem = ({ header, clickMenu, clickedHeader, language }
           </a>
         )}
       </div>
-      {/* Extended navigation dropdown */}
       {currentHeaderSelected && restLinks && show && (
         <ul className='bg-white shadow-md flex flex-col absolute min-[1280px]:top-[85px] min-[1370px]:top-[75px] z-[50] rounded-lg min-w-[200px]'>
           <div className='relative pt-4 pb-2 pl-2 pr-12 flex flex-col gap-2'>
