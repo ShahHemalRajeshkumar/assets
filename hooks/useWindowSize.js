@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 const useWindowSize = () => {
   const [windowSize, setWindowSize] = useState({
@@ -7,26 +7,39 @@ const useWindowSize = () => {
     outerHeight: undefined,
   });
 
+  const handleResize = useCallback(() => {
+    // Use requestAnimationFrame to batch DOM reads
+    requestAnimationFrame(() => {
+      const isTypeform = !!document.getElementsByClassName('teacher-typeform').length;
+
+      if (!isTypeform) {
+        setWindowSize({
+          width: window.innerWidth,
+          height: window.innerHeight,
+          outerHeight: window.outerHeight,
+        });
+      }
+    });
+  }, []);
+
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      function handleResize() {
-        const isTypeform = !!document.getElementsByClassName('teacher-typeform').length;
+      // Throttle resize events
+      let timeoutId;
+      const throttledResize = () => {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(handleResize, 16); // ~60fps
+      };
 
-        if (!isTypeform) {
-          setWindowSize({
-            width: window.innerWidth,
-            height: window.innerHeight,
-            outerHeight: window.outerHeight,
-          });
-        }
-      }
+      window.addEventListener('resize', throttledResize, { passive: true });
+      handleResize(); // Initial call
 
-      window.addEventListener('resize', handleResize);
-      handleResize();
-
-      return () => window.removeEventListener('resize', handleResize);
+      return () => {
+        window.removeEventListener('resize', throttledResize);
+        clearTimeout(timeoutId);
+      };
     }
-  }, []);
+  }, [handleResize]);
 
   return windowSize;
 };

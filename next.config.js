@@ -318,7 +318,7 @@ module.exports = withBundleAnalyzer({
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     formats: ['image/avif', 'image/webp'],
-    minimumCacheTTL: 86400,
+    minimumCacheTTL: 31536000,
   },
   staticPageGenerationTimeout: 30000,
   outputFileTracing: true,
@@ -362,6 +362,24 @@ module.exports = withBundleAnalyzer({
       },
       {
         source: '/_next/static/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/assets/images/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/:path*\.(png|jpg|jpeg|gif|webp|svg|ico|woff|woff2|ttf|eot)',
         headers: [
           {
             key: 'Cache-Control',

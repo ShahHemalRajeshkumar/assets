@@ -64,15 +64,16 @@ const OrganizationInfo = memo(({ language, organizationData, seoActions = {}, in
   return (
     <div>
       <div className="w-full max-w-[1440px] mx-auto h-[280px] relative rounded-xl overflow-hidden">
-  <Image
-  src="/assets/images/schollbg.webp"
-  alt="School Background"
-  width={1440}
-  height={280}
-  priority
-  sizes="100vw"
-  className="object-cover rounded-xl w-full h-[280px]"
-/>
+        <Image
+          src="/assets/images/schollbg.webp"
+          alt="School Background"
+          width={1440}
+          height={280}
+          priority={true}
+          fetchPriority="high"
+          sizes="100vw"
+          className="object-cover rounded-xl w-full h-[280px]"
+        />
 
   <div onClick={() => setShow(true)} className="absolute top-5 right-5">
     <ShareIcon className="w-[20px] h-[20px]" />
