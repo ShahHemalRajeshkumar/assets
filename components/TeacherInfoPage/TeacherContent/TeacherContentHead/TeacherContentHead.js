@@ -32,6 +32,7 @@ const TeacherContentHead = ({
     window.scrollTo({ top: 0, behavior: 'instant' });
     showPopup('contact', {});
   };
+
   const showTeacherPhoto = () => showPopup('photo', {});
   const shareLinkHandle = () => {
     showPopup('links', { title: translateENtoDE('Share this page', language) });
@@ -81,7 +82,6 @@ const TeacherContentHead = ({
 
   const onScroll = useCallback(() => {
     const footerBottom = bottomRef?.current?.getBoundingClientRect()?.bottom;
-
     setIsBottom(footerBottom < 50);
   }, [bottomRef]);
 
@@ -105,7 +105,9 @@ const TeacherContentHead = ({
           height={responsiveData.imageBgHeight}
         />
       </div>
+
       <div className='relative px-5 pt-11'>
+        {/* Teacher Photo + Title */}
         <div className='teacher-content-head-photo-wrap'>
           {teacher?.avatar_path ? (
             <Image
@@ -127,11 +129,22 @@ const TeacherContentHead = ({
           )}
           {width >= 650 && <h1 className='teacher-content-head-title'>{getTeacherTitle(teacher, language)}</h1>}
         </div>
-        <div className='flex items-center mb-3'>
+
+        <div className='flex items-center justify-between mb-3'>
           <h2 className='font-bold text-20px sm:text-24px'>{teacher?.name}</h2>
-          {/* <HeartIcon className='ml-4 mr-2 cursor-pointer' /> */}
-          <div className='ml-4 cursor-pointer' onClick={shareLinkHandle}>
-            <ShareIcon />
+          <div className='flex items-center gap-3'>
+            <div className='cursor-pointer' onClick={shareLinkHandle}>
+              <ShareIcon />
+            </div>
+        
+             
+            <button 
+              onClick={closeSidebar} 
+              className="cursor-pointer text-xl leading-none"
+            >
+              ✕
+            </button> 
+            
           </div>
         </div>
         <div className='teacher-content-head-info smd:pb-4 pb-0'>
@@ -152,7 +165,13 @@ const TeacherContentHead = ({
           </div>
         </div>
         <div className='max-[1100px]:block hidden '>
-          <TeacherContactSection contactHandle={contactHandle} language={language} pricesHandle={pricesHandle} handleOpenGuaranteeModal={handleOpenGuaranteeModal} teacher={teacher} />
+          <TeacherContactSection
+            contactHandle={contactHandle}
+            language={language}
+            pricesHandle={pricesHandle}
+            handleOpenGuaranteeModal={handleOpenGuaranteeModal}
+            teacher={teacher}
+          />
         </div>
         <TeacherContentTabs
           tabRef={headRef}
