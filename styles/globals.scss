@@ -2,25 +2,6 @@
 @import "./contrast-fixes.css";
 @import "./button-accessibility.css";
 @import "./list-accessibility.css";
-@import "./navigation-fix.css";
-
-/* CSS Variables - Ensure they're always defined */
-:root {
-  --color-primary: 33, 105, 124;
-  --color-dark-primary: 26, 84, 99;
-  --color-light-primary: 176, 216, 228;
-  --color-secondary: 200, 6, 89;
-  --color-accent: 255, 193, 7;
-  --color-disable: 156, 163, 175;
-  --color-white: 255, 255, 255;
-  --color-black: 0, 0, 0;
-  --color-red: 239, 68, 68;
-  --color-light-grey: 243, 244, 246;
-  --color-light-grey-200: 229, 231, 235;
-  --color-light-grey-300: 209, 213, 219;
-  --color-light-grey-400: 156, 163, 175;
-  --color-light-grey-600: 75, 85, 99;
-}
 
 html,
 body {

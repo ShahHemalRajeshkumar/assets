@@ -1,9 +1,7 @@
 import '../styles/tailwind.css';
-import '../styles/globals.scss';
 import React, { useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
-import CriticalCSS from '../components/CriticalCSS';
 
 const CookieManager = dynamic(() => import('../components/CookieManager'), { ssr: false });
 
@@ -14,6 +12,7 @@ const MyApp = ({ Component, pageProps }) => {
     // Load non-critical styles after initial render
     const loadStyles = async () => {
       await Promise.all([
+        import('../styles/globals.scss'),
         import('../styles/NewDesigns/styles.scss'),
         import('../styles/TeacherInfo/styles.scss'),
         import('../styles/TeacherSearch/styles.scss'),
@@ -23,13 +22,13 @@ const MyApp = ({ Component, pageProps }) => {
       ]);
     };
     
-    // Load immediately for critical styles
-    loadStyles();
+    // Defer style loading
+    const timeoutId = setTimeout(loadStyles, 100);
+    return () => clearTimeout(timeoutId);
   }, []);
 
   return (
     <>
-      <CriticalCSS />
       <Component {...pageProps} />
       <CookieManager />
     </>
